@@ -1,0 +1,48 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}] 
+\item Since the matrices commute, the modes will be simultaneous eigenvectors of the symmetry transformation and the interaction. There are then two modes. These two solution are $x(t)$ and $\tilde{x}(t) = \mathcal{S}x(t)$.
+
+\item When we have a symmetry matrix either we don't undergo any transformation on the eigenvalue $\lambda = 1$, or it will undergo a transformation on the eigenvalue $\lambda = -1$. \footnote{
+This is justified because $\det (A - \lambda I) = \lambda^2 - 1 = 0\implies \lambda = 1, \lambda = -1$.}
+Since the 1s of the symmetry matrix are off the diagonal, when we multiply $\mathcal{S}$ by the components of the eigenvector we will switch the eigenvalues. For example:
+\[
+\begin{pmatrix}
+0 & -1 \\
+-1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+A \\
+B
+\end{pmatrix}
+=
+\begin{pmatrix}
+-B \\
+A
+\end{pmatrix}
+\]
+We need the absolute value of $A$ and $B$ to be the same if we want it to only change by a factor of 1 or -1 upon reflection. Therefore, if we try something such as 
+\[
+\begin{pmatrix}
+A \\
+A
+\end{pmatrix}
+\]
+and multiply by the symmetry matrix, we get 
+\[
+\begin{pmatrix}
+0 & -1 \\
+-1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+A \\
+A
+\end{pmatrix}
+=
+\begin{pmatrix}
+-A \\
+-A
+\end{pmatrix}
+\]
+The ratio of the amplitudes of the components of the eigenvector are then 1.
+\end{enumerate}
+\end{sol}

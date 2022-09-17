@@ -1,0 +1,28 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item To show that the field satisfies the EM wave equation we first write the EM wave equation as 
+\[\vec{\nabla}^2 E = \frac{1}{c^2}\pdv{^{2}\vec{E}}{t^2}.\]
+We see that $\vec{\nabla}^2 E$ is given by 
+\[\vec{\nabla}^2 E = \left(\pdv{^2}{x^2} + \pdv{^2}{y^2} + \pdv{^2}{z^2}\right)\vec{E}.\]
+Since the EM wave only goes in the $\hat{y}$ direction, this means that 
+\[\vec{\nabla}^2 E = \pdv{^2 E_y}{x^2}\hat{y} = E f^{\prime \prime} (x - ct)\hat{y}.\]
+Also, 
+\[\pdv{^2 \vec{E}}{t^2} = c^2 E_0 f^{\prime \prime} (x - ct)\hat{y}.\]
+This now clearly satisfies the EM wave equation.
+
+\item We note that 
+\[\vec{\nabla}\cdot \vec{E} = \left(\pdv{^2 E_x}{x^2} + \pdv{^2 E_y}{y^2} + \pdv{^2 E_z}{z^2}\right) = 0\]
+as long as $E_x = 0$.
+
+\item Note that 
+\[\vec{\nabla}\times \vec{E} = -\pdv{\vec{B}}{t} \implies -\pdv{\vec{B}}{t} = 
+\begin{vmatrix}
+\hat{x} & \hat{y} & \hat{z} \\
+\pdv{}{x} & \pdv{}{y} & \pdv{}{z} \\
+0 & E_y & 0
+\end{vmatrix}.
+\]
+This tells us that 
+\[-\pdv{\vec{B}}{t} = \pdv{E_y}{x} \hat{z}\implies \vec{B} = \boxed{\frac{E_0}{c} f (x - ct) \hat{z}}.\]
+\end{enumerate}
+\end{sol}

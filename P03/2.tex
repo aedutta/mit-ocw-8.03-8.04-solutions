@@ -1,0 +1,24 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}] 
+\item To find the normal modes of frequencies, we must first find the equations of motions. Note that we can use symmetry arguments after we find the equation of motion in one circuit. The flux in the first circuit is given by the sum of the self and mutual inductance. Mutual inductance means that the two inductors share flux or more specifically, the relationship in flux between an inductor $L_1$ and the current $I_2$ is given by 
+\[\Phi_{m_{1}} = MI_2.\]
+The total flux in circuit 1 is then given by 
+\[\Phi_{\text{tot}_{1}} = \Phi_{s_{1}} + \Phi_{m_{1}} = L I_1 + M I_2.\]
+Taking a time derivative of this equation with using $\dot{Q}= -I$ results in 
+\[\dot{\Phi}_{\text{tot}_{1}} = -L \ddot{Q}_1 - M\ddot{Q}_2.\]
+Using the fact that $\dot\Phi = V$ and $V = Q/C$, we result in the equation 
+\[\frac{Q_1}{C} = -L\ddot{Q}_1 - M\ddot{Q}_2.\]
+Using $\omega \equiv 1/\sqrt{LC}$, we can get the equations (by symmetry)
+\begin{align*}
+    \omega^2 Q_1 &= -\ddot{Q}_1 - \frac{M}{L}\ddot{Q}_2 \\
+    \omega^2 Q_2 &= -\ddot{Q}_2 - \frac{M}{L}\ddot{Q}_1
+\end{align*}
+Adding these two equations gives $$-\omega^2 (Q_1 + Q_2) = \left(1 + \frac{M}{L}\right)(\ddot {Q_1} + \ddot {Q_2}$$
+Therefore one normal mode is $\omega_+^2 = \frac{L \omega^2}{L+M} \implies \omega_+ = \sqrt{\frac{1}{C(L+M)}}$
+
+Subtracting the two equations gives 
+$$-\omega^2 (Q_1-Q_2) = \left(1 - \frac{M}{L}\right) (\ddot {Q_1} + \ddot {Q_2})$$
+Therefore second normal mode is $\omega_- = \sqrt{\frac{L \omega^2}{L-M}} \implies \omega_- = \sqrt{\frac{1}{C(L-M)}}$
+\item 
+\end{enumerate}
+\end{sol}

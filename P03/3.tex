@@ -1,0 +1,91 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}] 
+\item Let the distances of each of the masses from their equilibrium points be denoted by $x_1, x_2,$ and $x_3$ in the clockwise direction. We then see that the equations of motions of the masses are defined by 
+\begin{align*}
+    m\ddot{x}_1 &= -k (x_1 - x_2) - k (x_1 - x_3)\\
+    m\ddot{x}_2 &= -k (x_2 - x_1) - k (x_2 - x_3)\\
+    m\ddot{x}_3 &= -k (x_3 - x_1) - k (x_3 - x_2)
+\end{align*}
+
+\item First, we rewrite our equation of motion to isolate $x_1, x_2$, and $x_3$. By rewriting, we have 
+\begin{align*}
+    m\ddot{x}_1 &= -2kx_1 + kx_2 + kx_3\\
+    m\ddot{x}_2 &= kx_1 - 2kx_2 + kx_3\\
+    m\ddot{x}_3 &= kx_1 + kx_2 - 2kx_3
+\end{align*}
+Using the definition of a normal mode 
+\[
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{pmatrix}
+= 
+\Re \left[
+\begin{pmatrix}
+A_1 \\
+A_2 \\
+A_3
+\end{pmatrix}
+e^{i (\omega t + \phi)}
+\right]
+\]
+we can then rearrange to find 
+$$\begin{aligned}- m\omega^{2}A_1 &= -2kA_1 + kA_2 + kA_3 & & 0=\left(-2k + 2m \omega^{2}\right) A_{1}+k A_{2}+k A_{3} \\
+-m\omega^{2}A_2 &= kA_1 - 2kA_2 + kA_3 & \Rightarrow \quad & 0= -kA_1 + (-2k + m\omega^2)A_2 + kA_3 \\
+-m\omega^2 A_3 &= kA_1 + kA_2 - 2kA_3 & & 0 = kA_1 + kA_2 + (-2k + m\omega^2)A_3
+\end{aligned}$$
+Now, rewrite in matrix format 
+\[
+\begin{pmatrix}
+-2k + 2m \omega^{2} & k & k \\
+-k & -2k + m\omega^2 & k \\
+k & k & -2k + m\omega^2
+\end{pmatrix}
+\begin{pmatrix}
+A_1 \\
+A_2 \\
+A_3
+\end{pmatrix}
+= 0
+\]
+To get a solution we need to solve the equation where the determinant of the left matrix is zero.
+\[
+\begin{vmatrix}
+-2k + 2m \omega^{2} & k & k \\
+k & -2k + m\omega^2 & k \\
+k & k & -2k + m\omega^2
+\end{vmatrix}
+= 0
+\]
+If we define $\omega_0^2 = \frac{k}{m}$, then after dividing the matrix by $m$, we yield the equation 
+\[
+\begin{vmatrix}
+-2\omega_0^2 + 2\omega^{2} & \omega_0^2 & \omega_0^2 \\
+\omega_0^2 & -2\omega_0^2 + \omega^2 & \omega_0^2 \\
+\omega_0^2 & \omega_0^2 & -2\omega_0^2 + \omega^2
+\end{vmatrix}
+= 0.
+\]
+After evaluating the determinant we result in the equation 
+\[(-2\omega_0^2 + 2\omega^4)[(-2\omega_0^2 + \omega^2)^2 - \omega_0^4] = 0.\]
+We now gain two roots of $\omega^2 = 0$ and $\omega^2 = 3\omega_0^2$.
+
+\item We see that in the $\omega^2 = 0$ root, the normal mode is defined by 
+\[
+\begin{pmatrix}
+x_1 \\
+x_2 \\ 
+x_3
+\end{pmatrix}
+= 
+\begin{pmatrix}
+1 \\
+1 \\
+1
+\end{pmatrix}
+(At + B)
+\]
+and corresponds to the masses sliding around the circle at a constant speed. Therefore, there are not really any oscillations exhibited in this mode. 
+\end{enumerate}
+\end{sol}

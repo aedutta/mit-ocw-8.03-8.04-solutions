@@ -1,0 +1,27 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}] 
+\item Let us analyze the forces involved. There is a vertical drag force $b\ddot{y}$, a tension directed downwards at an angle $\theta$ to the horizontal, and a horizontal normal force that acts on the pole in the opposite direction of the tension. 
+\vspace{3mm}
+
+\noindent Applying Newton's law in the vertical direction gives us 
+\[m\ddot{y} = -T\sin\theta + F_d.\]
+Writing the force in differential form and assuming small angles yields,
+\[m\ddot{y} = -T\frac{\partial y}{\partial x} - b\frac{\partial y}{\partial t}.\]
+The mass of the ring is negligible and thus 
+\[-T\frac{\partial y}{\partial x} - b \frac{\partial y}{\partial t} = 0 \implies \boxed{\frac{\partial y}{\partial x} = -\frac{b}{T}\frac{\partial y}{\partial t}}.\]
+
+\item The wave can be written as a superposition of the incident and reflected pulse. In other words, 
+\[y (x,t) = f(vt - x) + g(vt + x).\]
+The reflected wave $g(x + vt)$ is unknown, but we can use boundary conditions used in part (a) to solve for it. 
+\begin{align*}
+    \pdv{y}{x} &= f' (vt - x) + g' (vt + x) \\
+    \pdv{y}{t} &= v (f' ( vt - x) + g' (vt + x))
+\end{align*}
+Defining are coordinate system such that the hoop is at $x = 0$, we then can then write 
+\[\pdv{y}{x} = -\frac{b}{T}\pdv{y}{T}\implies f' (vt) + g' (vt) = -\frac{bv}{T} (f' ( vt) + g' (vt)).\]
+Isolating $g(vt)$ tells us that 
+\[g'(vt) = \frac{bv - T}{bv + T}f' (vt).\]
+To now solve for $g$ in terms of $f$ we must integrate this expression. Substituting $u = vt$ gives us 
+\[\int g' (u) du = \int \frac{bv - T}{bv + T}f' (u) du \implies g (vt) = \boxed{\frac{bv - T}{bv + T} f(vt)}.\]
+\end{enumerate}
+\end{sol}

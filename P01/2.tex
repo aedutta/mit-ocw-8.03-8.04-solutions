@@ -1,0 +1,35 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item To take derivatives of the function 
+    \[X(t) = Ae^{-i (\omega t - \pi/2)}\]
+    we must make use of Euler's identity which states 
+    \[e^{ix} = \cos x + i\sin x.\]
+    This means that 
+    \[X (t) = A\left[\cos \left(-\left(\omega t - \frac{\pi}{2}\right)\right) + i\sin \left(-\left(\omega t - \frac{\pi}{2}\right)\right)\right].\]
+    We make use that $\cos (x) = \cos (-x)$ and $\sin (-x) = -\sin (x)$ to simplify our expression to be 
+    \[X(t) = A\left[ \cos \left(\omega t - \frac{\pi}{2}\right) - i\sin \left(\omega t - \frac{\pi}{2}\right)\right]\implies X(t) = \boxed{A(\sin \omega t + i\cos\omega t)} .\]
+    Therefore, from taking the first derivative, we have that 
+    \[\dot{X}(t) = -A\omega (i\sin \omega t - \cos\omega t).\]
+    The real component of this will be given by 
+    \[\dot{X}(t) = \boxed{A\omega\cos\omega t}.\]
+    The second derivative of this function is then given as 
+    \[\ddot{X}(t) = -A\omega^2 (\sin \omega t + i\cos \omega t).\]
+    The real component of this will be given by 
+    \[\ddot{X}(t) = \boxed{-A\omega^2 \sin \omega t}.\]
+    
+    \item We are given that 
+    \[\dot{X}(t) = \boxed{Bi\omega\tau e^{-i(\omega t + \pi/6)}}\]
+    which we can rewrite as 
+    \[\dot{X} (t) = \left(\frac{\sqrt{3}}{2} - \frac{i}{2}\right)Bi\omega\tau e^{-i\omega t}.\]
+    Integrating this gives us 
+    \[X (t) = \int \left(\frac{\sqrt{3}}{2} - \frac{i}{2}\right)Bi\omega\tau e^{-i\omega t} \dd t = -\left(\frac{\sqrt{3}}{2} - \frac{i}{2}\right)B\tau e^{-i\omega t}.\]
+    Using Euler's identity, we find that 
+    \[X (t) = -\left(\frac{\sqrt{3}}{2} - \frac{i}{2}\right)B\tau (\cos \omega t - i\sin \omega t)\]
+    the real component of $X(t)$ will be 
+    \[X(t) = \boxed{ - \frac{\sqrt{3}}{2}B\tau \cos\omega t}.\]
+    Differentiating $\dot{X} (t)$ with respect to $t$ gives us 
+    \[\ddot{X} (t) = \left(\frac{\sqrt{3}}{2} - \frac{i}{2}\right)B\omega^2\tau e^{-i\omega t} = \left(\frac{\sqrt{3}}{2} - \frac{i}{2}\right)B\omega^2\tau(\cos \omega t - i\sin \omega t).\]
+    Taking the real component tells us that
+    \[\ddot{X} (t) = \boxed{\frac{\sqrt{3}}{2} B\omega^2 \tau \cos\omega t}.\]
+\end{enumerate}
+\end{sol}

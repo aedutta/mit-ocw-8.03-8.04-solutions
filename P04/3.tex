@@ -1,0 +1,34 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item We have two boundary conditions: 
+\begin{itemize}
+    \item At $x = 0$, $\pdv{\psi (0, t)}{x} = 0$.
+    \item At $x = L$, $\pdv{\psi (L, t)}{x} = 0$.
+\end{itemize}
+By symmetry, the wavefunction is given by 
+\[\psi_m (x, t) = A_m \sin (\omega_m t + \beta_m) \sin (k_m x + \alpha_m).\]
+Taking the partial derivative of this with respect to $x$ gives us 
+\[\pdv{\psi_m}{x} = A_m k_m \sin (\omega_m t + \beta_m)\cos (k_m x + \alpha_m).\]
+We now can apply the boundary conditions. 
+\begin{itemize}
+\item At $x = 0$:
+\[\pdv{\psi_m (0, t)}{x} = A_m k_m \sin (\omega_m t + \beta_m) \cos (\alpha_m) = 0.\]
+Therefore, we require that 
+\[\cos (\alpha_m) = 0\implies \alpha_m = \pi m - \frac{\pi}{2}.\]
+
+\item At $x = L$:
+\[\pdv{\psi_m}{x} = A_m k_m \sin (\omega_m t + \beta_m) \cos (k_m L + \pi m - \pi/2) = 0.\]
+We require that 
+\[k_m L + \pi m - \frac{\pi}{2} = \pi n - \frac{\pi}{2}.\]
+This means that 
+\[k_m = \frac{\pi (n - m)}{L}, \quad a = n - m = 1, 2, 3, \dots\]
+or 
+\[k_m = \frac{\pi a}{L}.\]
+\end{itemize} 
+
+\item We can draw each mode. 
+\begin{itemize}
+    \item For the first mode $a = 1$, there w
+\end{itemize}
+\end{enumerate}
+\end{sol}

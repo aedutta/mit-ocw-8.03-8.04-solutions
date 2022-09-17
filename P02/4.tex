@@ -1,0 +1,15 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Let the mass-spring system be initially at rest at the beginning. After a time $t$, the right end ($x_\text{end}$) will move a leftward distance of $d(t) = \Delta \sin \omega t$. Let us place the origin at the equilibrium position of the mass. At time $t$, the right spring will be compressed by an effective length $x = x_0 - \Delta \sin \omega t$ while the left spring remains a rest length of $x_0$. The drag force works against these two spring forces that are directed in the left direction, so the drag force moves in the right direction with a force of $b\dot{x}$. We now write the equation of motion in both the $\hat{x}$ and $\hat{y}$ direction. In the $\hat{x}$ direction, we have 
+\[m\ddot{x} = b\dot{x} - (kx_0 + k(x_0 - \Delta \sin\omega t)).\]
+This gives us our equation of motion to be 
+\[\boxed{m\ddot{x} - b\dot{x} + 2kx_0 = k\Delta \sin \omega t}.\]
+In the $\hat{y}$ direction, there will be a vertical downward force of $\vec{F}_g$ and a normal force that counteracts this $\vec{F}_N$. We then have 
+\[m\ddot{y} = \vec{F}_g + \vec{F}_N = -mg\hat{y} + mg\hat{y} = 0.\]
+
+\item We can guess a solution of the form 
+\[x(t) = x_{\text{free}} + x_{\text{driven}} = A\cos (\omega_d t - \delta) + B \sin (\omega_d t + \alpha).\]
+We see that $A$ and $B$ and the phase constants $\delta$ and $\alpha$ all depend on the oscillator properties while $\omega_d$ depends on the properties of the external force.  
+\end{enumerate}
+
+\end{sol}

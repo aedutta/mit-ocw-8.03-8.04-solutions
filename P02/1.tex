@@ -1,0 +1,23 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Note that writing Kirchhoff's Voltage Law in the clockwise direction tells us that $\sum V = 0$ which means 
+\[\frac{Q(t)}{C} - L\frac{dI}{dt} - IR = 0\implies \boxed{L\ddot{Q}(t) + R\dot{Q}(t) + \frac{1}{C}Q = 0}.\]
+Here we have used the fact that $-\dot{Q} = I$.
+\item The oscillations are probably under-damped as the resistance will be small as compared to the effects of voltage. If it is anything else, there won't be any oscillations in the RLC circuit which is unlikely to happen.
+\item This form represents the general equation of oscillations of $\theta$ with a drag force of $-b\dot{\theta}(t)$ which is written as 
+\[\ddot\theta + \Gamma \dot\theta + \omega_0^2 \theta = 0.\]
+Here, we see that 
+\begin{align*}
+    \Gamma &= \frac{R}{L},\\
+    \omega_0^2 &= \frac{1}{LC}\implies \omega_0 = \frac{1}{\sqrt{LC}}
+\end{align*}
+We note that 
+\[Q (t) = \Re [Z (t)], \qquad Z(t) = e^{i\alpha t}\]
+where the solution for $\alpha$ is given as 
+\[\alpha = \frac{i\Gamma}{2}\pm \sqrt{\omega_0^2 - \frac{\Gamma^2}{4}}.\]
+Since the oscillations are under-damped or $\omega_0^2 > \Gamma^2/4$, we have that 
+\[Q(t) = (A\cos (\omega t + \phi)) \cdot e^{-\frac{\Gamma}{2}t} = \boxed{\left(A\cos (\frac{1}{\sqrt{LC}} t + \phi)\right) \cdot e^{-\frac{R}{2L}t}}\]
+where $A$ and $\phi$ are determined from initial conditions.
+For the problem given to us $Q(0) = CV_c(t=0) = 10^{-5} \text{C} $ and $\dot {Q} (0) = -0.5 \text{A}$, therefore we have $Q(0) = A \cos (\phi)$ and $\dot {Q}(0) = - A \sqrt {\frac{1}{LC}} \sin (\phi) - A \frac{R}{2L} \cos (\phi)$
+\end{enumerate}
+\end{sol}

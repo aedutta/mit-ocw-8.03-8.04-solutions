@@ -1,0 +1,144 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}] 
+\item Let us first find the equations of motion without the driving force and then add it in when we are done. Let us denote the upper mass by $m_1$ and the lower mass by $m_2$. We then see that the forces produced by the springs are $ky_1 (t)$ and $ky (2)$. The forces in the spring are then $ky_1 (t)$ and $k (y_2 (t) - y_1 (t))$ respectively. The gravitational force only creates a shift in the equilibrium position but this doesn't affect our equation of motion. This then tells us that our coupled differential equations are:
+\begin{align*}
+    m_1 \ddot{y}_1 &= + k(y_2(t) - y_1 (t)) - ky_1 (t) + F_0 \cos (\omega_d t) \\ 
+    m_2 \ddot{y}_2 &= -k (y_2 (t) - y_1 (t))
+\end{align*}
+Defining $m_1 = m_2 = m$ and $\omega_0^2 \equiv k/m$, we have 
+\begin{align*}
+    \ddot{y}_1 &= + \omega_0^2(y_2(t) - 2y_1 (t)) + \frac{F_0}{m}\cos (\omega_d t) \\ 
+    \ddot{y}_2 &= -\omega_0^2(y_2 (t) - y_1 (t))
+\end{align*}
+
+\item We define 
+\[M = \begin{pmatrix}
+m & 0 \\ 
+0 & m 
+\end{pmatrix}, 
+\quad 
+K = \begin{pmatrix}
++2k & -k \\
+-k & +k
+\end{pmatrix}
+, \quad 
+Y = \begin{pmatrix}
+y_1 \\ 
+y_2
+\end{pmatrix}
+.\]
+With a driving force, our matrix equation is given by 
+\[M\ddot{Y} = -K Y + F\cos (\omega_d t).\]
+
+Let us try to consider solutions for $\omega$ without a driving force. Using the definition of a normal mode 
+\[
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+\end{pmatrix}
+= 
+\Re \left[
+\begin{pmatrix}
+A_1 \\
+A_2 \\
+\end{pmatrix}
+e^{i (\omega t + \phi)}
+\right]
+\]
+we can get the equation down to 
+$$\begin{aligned}- \omega^{2}A_1 &= -2A_1\omega_0^2 + A_2\omega_0^2 & & 0=\left(-2\omega_0^2 + \omega^{2}\right) A_{1}+ \omega_0^2 A_2 \\
+-\omega^{2}A_2 &= A_1\omega_0^2 - A_2 \omega_0^2 & \Rightarrow \quad & 0= \omega_0^2 A_1 + (\omega^2 - \omega_0^2 )A_2 
+\end{aligned}$$
+Normalizing this into a matrix equation tell us 
+\[
+\begin{pmatrix}
+-2\omega_0^2 + \omega^2 & \omega_0^2 \\
+\omega_0^2 & -\omega_0^2 + \omega^2
+\end{pmatrix}
+\begin{pmatrix}
+A_1 \\
+A_2
+\end{pmatrix}
+= 0.\]
+To get a solution we need to solve the equation where the determinant of the left matrix is zero
+\[
+\begin{vmatrix}
+-2\omega_0^2 + \omega^2 & \omega_0^2 \\
+\omega_0^2 & -\omega_0^2 + \omega^2
+\end{vmatrix}
+= 0.
+\]
+Reducing this, we get 
+\[(-\omega_0^2 + \omega^2)(-2\omega_0^2 + \omega^2) - \omega_0^4 = -.\]
+Simplifying gives us 
+\begin{align*}
+    2\omega_0^4 - 2\omega^2\omega_0^2 - \omega_0^2 \omega^2 + \omega^4 - \omega_0^4 &= 0 \\
+    \omega_0^4 - 3\omega^2\omega_0^2 + \omega^4 &= 0
+\end{align*}
+This now implies that the roots of this equation are now 
+\[\omega_{+} = \sqrt{\frac{(3 + \sqrt{5})k}{2m}}, \quad \omega_{-} = \sqrt{\frac{(3 - \sqrt{5})k}{2m}}.\]
+Using these solutions and the fact that 
+\[\det (M^{-1}K - \omega^2 I) = (\omega^2 - \omega_{+}^2)(\omega^2 - \omega_{-}^2) = 0\]
+to further simplify this problem. Note now that 
+\[M^{-1}K = \begin{pmatrix}
+2\omega_0^2 & -\omega_0^2 \\ 
+-\omega_0^2 & \omega_0^2
+\end{pmatrix}
+,\quad 
+M^{-1}F = \begin{pmatrix}
+F_0/m \\
+0
+\end{pmatrix}
+.\]
+Using 
+\[(M^{-1}K - \omega^2 I)B = M^{-1}F\]
+to then expand into matrix form gives us 
+\[\begin{pmatrix}
+2\omega_0^2 - \omega_d^2 & -\omega_0^2 \\ 
+-\omega_0^2 & \omega_0^2 - \omega_d^2
+\end{pmatrix}
+\begin{pmatrix}
+B_1 \\
+B_2
+\end{pmatrix}
+= 
+\begin{pmatrix}
+F_0/m \\
+0
+\end{pmatrix}
+\]
+We can go ahead and solve it directly to get $B_1$ and $B_2$ or we can use “Cramer’s Rule” which is a useful rule when solving a large number of coupled oscillators. First define:
+\[E^{\leftrightarrow} = \begin{pmatrix}
+2\omega_0^2 - \omega_d^2 & -\omega_0^2 \\ 
+-\omega_0^2 & \omega_0^2 - \omega_d^2
+\end{pmatrix},
+\quad 
+D^{\rightarrow} = \begin{pmatrix}
+F_0 /m \\
+0
+\end{pmatrix}
+.\]
+To use Cramer’s rule, use one column from $E^{\leftrightarrow}$ and $D^{\rightarrow}$
+\begin{align*}
+    B_1 &= \frac{|(D^{\rightarrow})()|}{\det E^{\leftrightarrow}} \\
+    &= \frac{\begin{pmatrix}
+    F_0/m & -\omega_0^2 \\
+    0 & \omega_0^2 - \omega_d^2
+    \end{pmatrix}}{(\omega^2 - \omega_{+}^2)(\omega^2 - \omega_{-}^2)} \\
+    &= \frac{\frac{F_0}{m} (\omega_0^2 - \omega_d^2)}{(\omega^2 - \omega_{+}^2)(\omega^2 - \omega_{-}^2)}
+\end{align*}
+Which explodes when $\omega_d = \omega_{+}, \omega_{-}$ which are the frequencies of the normal modes. Similarly:
+\begin{align*}
+    B_2 &= \frac{|()(D^{\rightarrow})|}{\det E^{\leftrightarrow}} \\
+    &= \frac{\begin{pmatrix}
+    2\omega_0^2 & F_0/m \\
+    -\omega_0^2 & 0
+    \end{pmatrix}}{(\omega^2 - \omega_{+}^2)(\omega^2 - \omega_{-}^2)} \\
+    &= \frac{\frac{F_0}{m}\left(\frac{\omega_0^2}{m}\right)}{(\omega^2 - \omega_{+}^2)(\omega^2 - \omega_{-}^2)} \\
+\end{align*}
+The full solution is given by 
+\begin{align*}
+    y_1 &= \alpha \cos (\omega_{+}t + \phi) + \beta \cos (\omega_{-}t + \phi) + B_1 \cos (\omega_d t)
+\end{align*}
+\end{enumerate}
+\end{sol}

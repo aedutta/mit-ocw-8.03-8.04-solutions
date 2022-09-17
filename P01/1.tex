@@ -1,0 +1,15 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item Intuitively it makes sense that the oscillations would not be dependent on gravity. This is because the oscillations would be the same as that on a vertical spring except this time it would be about a different equilibrium positions. Showing this mathematically is a slightly harder task. 
+    \vspace{3mm}
+    
+    \noindent First, we find the equilibrium position. We have our coordinate position to be the rest point at the center of mass of the block with the $y$-axis going upwards and the $x$-axis going horizontally. Let the extension in spring in equilibrium be $y_0$. There are two forces involved, the force from the spring and the force from gravity. This means that from a force analysis, we have that 
+    \[ky_0 - mg = 0 \implies y_0 = \frac{mg}{k}.\]
+    Now displace the mass by $y$. From Newton's Law, we find that
+    $$\vec{F} = m\vec{a} = m\frac{d^2 y}{dt^2} = m \ddot {y} = (mg - ky)\hat{y}.$$
+    Rewriting, we find that 
+    \[m\ddot{y} = -k\left(y + \frac{mg}{k}\right)\hat{y} = -k (y - y_0).\]
+    We can define $x\equiv y - y_0$ which gives us the same equation as in the lecture with $\omega = \sqrt {\frac{k}{m}}$. Gravity affects only the equilibrium position not the angular frequency.
+\end{enumerate}
+
+\end{sol}

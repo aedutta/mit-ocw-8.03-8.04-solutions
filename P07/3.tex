@@ -1,0 +1,22 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item To find the range of frequencies, we use the inverse fourier transform:
+\[C (\omega) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \dd t f(t) e^{i \omega t}\]
+with 
+\[f (x, t) = \exp \left[-\frac{1}{2}\left(\frac{x - vt}{\sigma}\right)^2\right].\]
+Our integral then looks like 
+\[C (\omega) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \dd t \exp \left[-\frac{1}{2}\left(\frac{x - vt}{\sigma}\right)^2\right] e^{i \omega t}.\]
+We can then arrange the integral to be formatted such that:
+\[C (\omega) = \frac{1}{2\pi} \dd t\int_{-\infty}^{\infty} \exp \left[-\left(\frac{v^2}{2\sigma^2}\right)t^2 + \left(\frac{\omega v}{\sigma^2} + i\omega\right)t - \frac{x^2}{2\sigma^2}\right].\]
+In general, if we have an integral in the form of 
+\[I = \int \dd x e^{-ax^2 + bx + c}\]
+we solve it such that 
+\[I = \int \dd x e^{-a \left(x - \frac{b}{2a}\right)^2}e^{\frac{b^2}{4a} + c} = \sqrt{\frac{\pi}{a}} e^{\frac{b^2}{4a} + c}.\]
+In this example, if we let 
+\begin{align*}
+    a = \frac{v^2}{2\sigma^2}, \quad b = \frac{\omega v}{\sigma} + i\omega, \quad c = -\frac{x^2}{2\sigma^2}.
+\end{align*}
+Therefore, 
+\[ C (\omega) = \sqrt{\frac{\pi}{v^2/2\sigma^2}} \exp \left[\left(\frac{\omega v}{\sigma^2} + i\omega\right)^2\left.\right/ \frac{4v^2}{2\sigma^2} - \frac{x^2}{2\sigma^2} \right].\]
+\end{enumerate}
+\end{sol}

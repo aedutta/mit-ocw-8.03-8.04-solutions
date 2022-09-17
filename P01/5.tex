@@ -1,0 +1,12 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item It is easy to see that $y = L \cos \theta$ and $x = L \sin \theta$. 
+    For equation of motion, we know that torque on the mass is only due to gravity which is $-Mgx$ and $\tau = I \alpha = mL^2 \ddot {\theta}$. Therefore we have $$ mL^2 \ddot {\theta} = -mgL \sin \theta \implies \ddot {\theta} + \frac{g \sin \theta}{L} = 0$$
+    \item For small angles $\sin \theta \approx \theta $, therefore simple harmonic equation of motion becomes $$ \ddot {\theta} + \frac{g}{L} \theta = 0 $$
+    \item Taylor series expansion for $\sin \theta$ is $$ \sin \theta = \theta - \frac{\theta ^3}{3!}+\frac{\theta ^5}{5!}-... $$ For $\frac{\theta ^3}{3!} \ll \theta $ we have $\sin \theta \approx \theta $
+    From the simple harmonic equation of motion we can see that $$\omega = \sqrt{\frac {g}{L}} \implies T = 2 \pi \sqrt {\frac{L}{g}}$$
+    \item
+    \item Let us say that $x$ is the horizontal distance from the pendulum to the central vertical axis. Then, we can write newton's first law as $$F = m\ddot{x}.$$ $F$ will just be the net horizontal force which can be found by balancing the forces. The net vertical force is 0, so $$T\cos\theta = mg \implies T = \frac{mg}{\cos\theta}$$ where $\theta$ is the angle between the central vertical axis and the rope. The net horizontal force is $$-T\sin\theta = \frac{-mg\sin\theta}{\cos\theta} = -mg\tan\theta.$$ $\theta$ is $\tan^{-1}(\frac{x}{\sqrt{L^2-x^2}})$, so the equation of motion is $$-mg\tan\theta = m\ddot{x} \implies \fbox{$\dfrac{-mgx}{\sqrt{L^2-x^2}} = m\ddot{x}$}$$
+    \item If $x$ is small, then we can approximate our equation of motion by getting rid of any terms with $x$ to a high power, so we can approximate our equation of motion to $$\frac{-mgx}{L} = m\ddot{x} \implies \frac{gx}{L} + \ddot{x} = 0 .$$ 
+\end{enumerate}
+\end{sol}

@@ -1,0 +1,33 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item When the crystal is displaced a distance $x$ from the equilibrium position, our equation of motion will be predetermined by 
+\[M\ddot{x} = F - k_{\text{eff}} x - Mg.\]
+Substituting $F = MA_0 \cos (\omega_d t)$ and $k_{\text{eff}} = 4k$ into our equation gives us our equation of motion to be
+\[\boxed{M\ddot{x} = MA_0 \cos (\omega_d t) - 4k (A_0 - x) - Mg}.\]
+
+\item Now, since the homogeneous solution dies out eventually there should be a very small drag force, we add the drag force factor of $-\gamma \dot{x}$ to our equation. We now have our equation of motion to be 
+\[M\ddot{x} = MA_0 \cos (\omega_d t) - 4kx - Mg - \gamma \dot{x}\]
+and rearranging gives us 
+\[M\ddot{x} + \gamma \dot{x} + 4kx = MA_0 \cos (\omega_d t).\]
+Note that this equation is very similar to the one discussed and solved in lecture 3:
+\[\ddot\theta + \Gamma \dot\theta + \omega_0^2 \theta = f_0 \cos (\omega_d t).\]
+Dividing by $M$ on both sides of our obtained equation gives us the form 
+\[\ddot{x} + \frac{\gamma}{M}\dot{x} + \frac{4k}{M}x = A_0 \cos (\omega_d t)\]
+which now tells us that 
+\begin{align*}
+    \Gamma &= \frac{\gamma}{M},\\
+    \omega_0^2 &= \frac{4k}{M}\implies \omega_0 = \sqrt{\frac{4k}{M}}\\
+    f_0 &= A_0.
+\end{align*}
+As solved in the lecture, the amplitude of oscillations of this equation is given by 
+\[A = \frac{f_0}{\sqrt{(\omega_0^2 - \omega_d^2)^2 + \omega_d^2\Gamma^2}}.\]
+Therefore, by substituting, we find that 
+\[A = {\frac{A_0}{\sqrt{(4k/M - \omega_d^2)^2 + \gamma^2\omega_d^2/M}}}\]
+As $\gamma$ is very small $$\boxed{A \approx  {\frac{A_0}{4k/M - \omega_d^2}}}$$
+\item To decrease the amplitude we have to increase $k$ which is done by reducing length of spring $$A_f = \frac{A_i}{10} \implies 10\left(\frac{k}{M} - \omega_d^2\right)= \frac{k_f}{M} - \omega_d^2 \implies k_f = 10k - 9M\omega_d^2 $$
+We know $k \propto \frac{1}{L}$ therefore $$\frac{L_f}{L_i} = \frac{k}{10k - 9M\omega_d^2} \approx \frac{1}{10} \left(1 + \frac{9M\omega_d^2}{10k}\right)$$
+\item Like we did in part b, \[A_f = {\frac{A_0}{\sqrt{(4k/M - \omega_d^2)^2 + b^2\omega_d^2/M}}} = \frac{A_i}{10}\] Here $A_i = \frac{A_0}{4K/M - \omega_d^2}$
+Therefore $$99\left(\frac{4K}{M} - \omega_d^2\right) = b^2 \frac{\omega_d^2}{M}\implies b = \sqrt{\frac{M}{99\omega_d^2\left(\frac{4K}{M}- \omega_d^2\right)^2}}$$
+For $\frac{4K}{M} \gg \omega_d^2$ $$b \approx \sqrt{\frac{M^2}{396K\omega_d^2}\left(1+\frac{M\omega_d^2}{4K}\right)} $$
+\end{enumerate}
+\end{sol}

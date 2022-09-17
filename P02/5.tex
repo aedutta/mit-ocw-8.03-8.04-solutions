@@ -1,0 +1,66 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}] 
+\item Let $x_1$ be the vertical displacement of the mass $m_1$ and let $x_2$ be the vertical displacement of the mass $m_2$. We then can write the equation of motion as 
+\begin{align*}
+    m\ddot{x}_1 &= k_C x_1 + k_B (x_1 - x_2) \\
+    m\ddot{x}_2 &= k_A x_2 
+\end{align*}
+We can rewrite this to isolate the equations for both $x_1$ and $x_2$. 
+\begin{align*}
+    m\ddot{x}_1 &= (k_C + k_B) x_1 - k_B x_2 \\
+    m\ddot{x}_2 &= 0 + k_A x_2 
+\end{align*}
+
+\item Now, let us write this in matrix format. The $M$ matrix is denoted by 
+\[
+M = 
+\begin{pmatrix}
+m & 0 \\
+0 & m
+\end{pmatrix}.
+\]
+From our equations of motion, the $K$ matrix has the form 
+\[
+K = 
+\begin{pmatrix}
+-k_B - k_C & k_B \\
+0 & -k_A
+\end{pmatrix}.
+\]
+Therefore, 
+\[M^{-1}K = \begin{pmatrix}
+-k_B/m - k_C/m & k_B/m \\
+0 & -k_A/m
+\end{pmatrix}
+\]
+This must equal to $\omega^2 I$, or in other words,
+\[
+\begin{pmatrix}
+-k_B/m - k_C/m & k_B/m \\
+0 & -k_A/m
+\end{pmatrix} = \omega^2\begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}.
+\]
+\item The matrix $M^{-1}K - \omega^2 I$ is 
+\[M^{-1}K - \omega^2 I = 
+\begin{pmatrix}
+-k_B/m - k_C/m - \omega^2 & k_B/m \\
+0 & -k_A/m - \omega^2
+\end{pmatrix}.
+\]
+To find the eigenvalues of $M^{−1}K$, we form the determinant 
+\begin{align*}
+\det [M^{-1}K - \omega^2 I] &= 
+\begin{vmatrix}
+-k_B/m - k_C/m - \omega^2 & k_B/m \\
+0 & -k_A/m - \omega^2
+\end{vmatrix} \\
+&= (-k_B/m - k_C/m - \omega^2)(-k_A/m - \omega^2) - (k_B/m)(0) \\
+&= (-k_B/m - k_C/m - \omega^2)(-k_A/m - \omega^2) = 0.
+\end{align*}
+Thus, the angular frequencies of the normal modes are 
+\[\omega_1^2 = \frac{k_B}{m} + \frac{k_C}{m}, \quad \omega_2^2 = \frac{k_A}{m}.\]
+\end{enumerate}
+\end{sol}

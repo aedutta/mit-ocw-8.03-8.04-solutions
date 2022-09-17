@@ -1,0 +1,36 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Note that 
+\[\frac{g}{k}\approx \frac{Tk}{\rho}\implies \frac{2\pi}{\lambda_{\text{crit}}} \approx \sqrt{\frac{\rho g}{T}}.\]
+This means that 
+\[\lambda_{\text{crit}} = 2\pi \sqrt{\frac{T}{\rho g}}.\]
+
+\item Remember our equation:
+\[v_p^2 = \left(\frac{g}{k} + \frac{Tk}{\rho}\right)\tanh (kh).\]
+In the shallow water limit where $\lambda \gg h$ and $kh\ll 1$, we have that 
+\[\tanh (kh) \approx kh, \quad \text{and} \quad v_p^2 (k) = \frac{\omega^2}{k^2}.\]
+Note that $\frac{g}{k} \gg \frac{Tk}{\rho}$ so therefore, 
+\[v_p^2 \approx gh \implies \omega^2 = gh k^2.\]
+The phase velocity will be $v_p = \sqrt{gh}$ while the group velocity will be 
+\[v_g = \dv{\omega}{k} = \sqrt{gh}.\]
+As $v_g$ is constant, the waves are non-dispersive in this case. 
+
+\item In the limit of deep water waves, $h\gg \lambda$ and $kh \gg 1$. Therefore, we have 
+\[\tan (kg) \approx 1, \quad \text{and} \quad v_p^2 = \frac{\omega^2}{k^2}.\]
+This tells us that 
+\[\omega^2 = gk + \frac{T}{\rho}k^3\]
+where $\omega = 2\pi/\lambda$. For very long wavelengths, the $k$ term dominates and then $\omega^2 \approx gk$ and the phase velocity is 
+\[v_p = \sqrt{\frac{g}{k}}\]
+and the group velocity
+\[v_g = \frac{1}{2}\sqrt{\frac{g}{k}}.\]
+Therefore, $v_g = v_p/2$ and since the group velocity is not constant, the waves are dispersive in this medium. 
+
+\item The $k^3$ term from our equation in part (c) dominates for $\lambda \ll \lambda_{\text{crit}}$. Then, 
+\[\omega^2 \approx \frac{T}{\rho k^3}\]
+and 
+\[v_p = \frac{\omega}{k} = \sqrt{\frac{Tk}{\rho}}\]
+and 
+\[v_g = \dv{\omega}{k} = \frac{3}{2}\sqrt{\frac{Tk}{\rho}}.\]
+Therefore, $v_g = \frac{3}{2}v_p$ and since the group velocity is not constant, capillary waves are dispersive. 
+\end{enumerate}
+\end{sol}

@@ -1,0 +1,44 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item The most straightforward way to prove the curl of a curl vector identity 
+\[\vec{\nabla}\times (\vec{\nabla} \times \vec{A}) = \vec{\nabla}(\vec{\nabla} \cdot \vec{A}) - (\vec{\nabla}\cdot \vec{\nabla}) \vec{A}\]
+is by simply expanding out all of the terms. We start off with the most basic identity 
+\[\vec{\nabla}\cdot \vec{A} = \left(\pdv{}{x} + \pdv{}{y} + \pdv{z}\right) \vec{A}.\]
+Let us denote this by $\xi$ as our terms will start to get messy. When we take $\vec{\nabla}(\vec{\nabla} \cdot \vec{A}) = \vec{\nabla}\cdot \vec{\xi}$, we result in 
+\[\vec{\nabla}(\vec{\nabla} \cdot \vec{A}) = \nabla \xi = \left(\pdv{}{x} + \pdv{}{y} + \pdv{z}\right) \vec{\xi}.\]
+By expanding outwards, we get 
+\begin{align*}
+    \vec{\nabla}(\vec{\nabla} \cdot \vec{A}) &= \left[\pdv{}{x} \left(\pdv{A_x}{x} + \pdv{A_y}{y} + \pdv{A_z}{z}\right)\right] \hat{x} + \left[\pdv{}{y} \left(\pdv{A_x}{x} + \pdv{A_y}{y} + \pdv{A_z}{z}\right)\right] \hat{y} + \left[\pdv{}{z} \left(\pdv{A_x}{x} + \pdv{A_y}{y} + \pdv{A_z}{z}\right)\right] \hat{z}
+\end{align*}
+Simplifying gives us 
+\begin{align*}
+    \vec{\nabla}(\vec{\nabla} \cdot \vec{A}) &= \left(\pdv{^2 A_x}{x^2} + \pdv{^2 A_y}{x \partial y} + \pdv{^2 A_z}{x \partial z}\right) \hat{x} + \left(\pdv{^2 A_x}{x \partial y} + \pdv{^2 A_y}{^2 y} + \pdv{^2 A_z}{y \partial z}\right) \hat{y} + \left(\pdv{^2 A_x}{x \partial z} + \pdv{^2 A_y}{y \partial z} + \pdv{^2 A_z}{z^2}\right) \hat{z}
+\end{align*}
+Alternatively, when taking $(\vec{\nabla}\cdot \vec{\nabla})\vec{A}$, we result in the laplacian in cartesian coordinates for each direction.
+\[(\vec{\nabla}\cdot \vec{\nabla})\vec{A} = \left(\pdv{^2 A_x}{x^2} + \pdv{^2 A_y}{y^2} + \pdv{^2 A_z}{z^2}\right)\hat{x} + \left(\pdv{^2 A_x}{x^2} + \pdv{^2 A_y}{y^2} + \pdv{^2 A_z}{z^2}\right) \hat{y} + \left(\pdv{^2 A_x}{x^2} + \pdv{^2 A_y}{y^2} + \pdv{^2 A_z}{z^2}\right) \hat{z}.\]
+We now have the right-hand side of our equation. Now, we need to expand outwards the left-hand side. First, note that 
+\[\nabla \times \vec{A} = \left(\pdv{A_z}{z} - \pdv{A_y}{y}\right)\hat{x} + \left(\pdv{A_x}{z} - \pdv{A_z}{x}\right)\hat{y} + \left(\pdv{A_y}{x} - \pdv{A_x}{y}\right)\hat{z}.\]
+From this, we can note that 
+\begin{align*}
+    \nabla \times (\nabla \times \vec{A}) &= \left[\pdv{}{z}\left(\pdv{A_y}{x} - \pdv{A_x}{y}\right) - \pdv{}{y}\left(\pdv{A_x}{z} - \pdv{A_z}{x}\right)\right] \hat{x}\\
+    &+ \left[\pdv{}{z}\left(\pdv{A_z}{z} - \pdv{A_y}{y}\right) -\pdv{}{x}\left(\pdv{A_y}{x} - \pdv{A_x}{y}\right)\right]\hat{y} \\
+    &+ \left[ \pdv{}{x}\left(\pdv{A_z}{z} - \pdv{A_y}{y}\right) - \pdv{}{y}\left(\pdv{A_x}{z} - \pdv{A_z}{x}\right) \right] \hat{z}
+\end{align*}
+Multiplying across now gives us 
+\begin{align*}
+    \nabla \times (\nabla \times \vec{A}) &= \left[\left(\pdv{^2 A_y}{x\partial z} - \pdv{^2 A_x}{y \partial z}\right) - \left(\pdv{^2 A_x}{y \partial z} - \pdv{^2 A_z}{x \partial y}\right)\right] \hat{x}\\
+    &+ \left[\left(\pdv{^2 A_z}{^2 z} - \pdv{^2 A_y}{y \partial z}\right) -\left(\pdv{^2 A_y}{x^2} - \pdv{^2 A_x}{x \partial y}\right)\right]\hat{y} \\
+    &+ \left[\left(\pdv{^2 A_z}{x \partial z} - \pdv{^2 A_y}{x \partial y}\right) - \left(\pdv{^2 A_x}{y \partial z} - \pdv{^2 A_z}{x \partial y}\right) \right] \hat{z}
+\end{align*}
+We now finally conclude that since the terms on both sides are the same, then 
+\[\vec{\nabla}\times (\vec{\nabla} \times \vec{A}) = \vec{\nabla}(\vec{\nabla} \cdot \vec{A}) - (\vec{\nabla}\cdot \vec{\nabla}) \vec{A}\]
+holds true.
+
+\item In a vacuum, we have 
+\[\vec{\nabla}\times\cancelto{\mu_0 \epsilon_0 \partial\vec{B}/\partial t}{(\vec{\nabla}\times\vec{B})}\;\;\;\;\;\;\;\;\;\;{=}\;\;\;\;\;\;\;\;\vec{\nabla}\cancelto{0}{(\vec{\nabla}\cdot\vec{B})}\;\;{-}\;(\vec{\nabla}^2)\vec{B}\]
+These replacements are done by the vacuum Maxwell's equations. Now, we are simply left with 
+\[\vec{\nabla}\times \left(\mu_0 \epsilon_0 \pdv{\vec{B}}{t}\right) = \mu_0 \epsilon_0\left[\frac{\partial}{\partial t} (\vec{\nabla}\times \vec{E})\right].\]
+Therefore, 
+\[-\vec{\nabla}^2 B = -\mu_0 \epsilon_0 \pdv{^2 \vec{B}}{t^2}\implies \vec{\nabla}^2 B = \mu_0 \epsilon_0 \pdv{^2 \vec{B}}{t^2}.\]
+\end{enumerate}
+\end{sol}
