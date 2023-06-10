@@ -1,0 +1,31 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item In SI units, the de Broglie wavelength of a nonrelativstic electron is $\lambda_{nr} = \frac{h}{p} = \frac{h}{\sqrt{2mE_{kin}}}$. To make computation easier, let us consider an arbitrary energy value, say $1 \times 10^{-12}\;\mathrm{J}$. Using the SI formula, the de Broglie wavelength associated with an electron of this energy is roughly $\lambda \approx 4.9 \times 10^{-19}\;\mathrm{m}$. $1 \times 10^{-12}\;\mathrm{J}$ is about $6.2 MeV$. Noting the conversion from the angstrom to the meter, $\delta \approx 12.3$. \\
+
+Alternatively, we can show the relationship symbolically. Using the fact that $\lambda p = h$, we can write $\delta$ as:
+$$\delta = \lambda \sqrt{kE} \times 10^{10} = \lambda p\sqrt{\frac{k}{2m_e}} \times 10^{10}=12.3$$
+where $k$ is the conversion factor from mass to energy.
+\item The de Broglie wavelength is:
+$$\lambda = \frac{h}{p}$$
+where the relativistic momentum $p$ is given by
+$$p^2c^2=E^2-m^2c^4 \implies p = mc\sqrt{\gamma^2-1}$$
+Combined together, we get the same form which is asked in the question:
+$$\lambda_\text{r} = \frac{h}{mc} \frac{1}{\sqrt{\gamma^2-1}}$$
+where $\ell=\frac{h}{mc}=2430 \text{ fm}$ 
+\item For a non-relativistic electron, the de Broglie wavelength is
+$$\lambda_\text{nr} = \frac{h}{mc(v/c)}= \frac{\ell}{\beta}$$
+where $\beta$ is given by:
+$$\gamma^2 = \frac{1}{1-\beta^2} \implies \frac{1}{\beta}= \frac{\gamma}{\sqrt{\gamma^2-1}}$$
+giving
+$$\lambda_\text{r} = \frac{h}{\gamma mv} = \frac{\ell}{\sqrt{\gamma^2-1}}$$
+Interestingly enough, $\ell = \frac{h}{mc}$ is just the Compton wavelength! Another interesting, though not at all surprising conclusion, is that the de Broglie wavelength transforms under the Lorentz transformations in a similar way length does (since $mv$ turns into $\gamma mv$).
+\item 
+\begin{enumerate}[label=(\roman*)]
+\item This can only be possible if $\lambda_r=\ell$. Using the relativistic formula, we must have:
+$$\gamma^2 - 1 = 1 \implies \beta \approx 0.71$$
+which is relativistic.
+\item First, note that $p = \sqrt{(E/c)^2 + m^2c^2}$. Using this relation, the momenta of the electron and proton can be calculated, allowing us to find the de Broglie wavelength. $$\lambda_e = \frac{h}{p} = \frac{h}{\sqrt{(E/c)^2 + m_e^2c^2}} \approx 1.24 \times 10^{-18}\;\mathrm{m}$$ $$\lambda_p = \frac{h}{p} = \frac{h}{\sqrt{(E/c)^2 + m_p^2c^2}} \approx 1.77 \times 10^{-19}\;\mathrm{m}$$
+\item Based on our results from part c), $\gamma = 1.1$. This gives $$\beta = \frac{\sqrt{21}}{11} \approx 0.42$$ Computing, the kinetic energy, $$T = \gamma E_\text{rest} \approx 0.562\;\text{MeV}$$.
+\end{enumerate}
+\end{enumerate}
+\end{sol}

@@ -1,0 +1,26 @@
+\begin{sol}
+The main argument of the stationary phase principle is that if the phase changes too quickly, the integral will cancel out over the function. Thus, where the function peaks, $\frac{\partial \phi}{\partial k} = 0$, where $\phi$ is the phase.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item $$\Psi(x) = \int_{-\infty}^{\infty}\mathrm{d}k\;\exp(-L^2(k - k_0)^2 + ikx)  = \int_{-\infty}^{\infty}\mathrm{d}k\;\exp(-L^2k^2 + 2L^2kk_0 - L^2k_0^2 + ikx)$$The phase part of the exponent is the imaginary term, so:
+$$\frac{\partial}{\partial k}(ikx) = ix = 0 \implies x = 0$$This can be confirmed by actually evaluating the integral:
+\begin{align*}
+\Psi(x) &= \int_{-\infty}^{\infty}\mathrm{d}k\;\exp(-L^2k^2 + (2L^2k_0 + ix)k- L^2k_0^2) \\
+&= \sqrt{\frac{\pi}{L^2}}\exp(L^2k_0^2)\exp((2L^2k_0 + ix)^2/4L^2) \\
+&= \frac{\sqrt{\pi}}{L}\exp(L^2k_0^2)\exp(L^2k_0^2)\exp(ik_0x)\exp(-x^2/4L^2)
+\end{align*}
+Notice that the last exponential term decays to zero as $x$ moves away from zero, proving our conclusion that the wavefunction peaks at $x = 0$
+
+\item $$\Psi(x) = \int_{-\infty}^{\infty}\mathrm{d}k\;\exp(-L^2(k - k_0)^2-ikx_0+ikx)$$
+The wave-function peaks when
+$$\frac{\partial}{\partial k}(-ikx_0+ikx) = -ix_0+ix \implies x = x_0$$
+Let us try to verify this by evaluating the integral:
+\begin{align*}
+\Psi(x) &= \int_{-\infty}^{\infty}\mathrm{d}k\;\exp(-L^2k^2 + (2L^2k_0 - ix_0 + ix)k - L^2k_0^2) \\
+&= \sqrt{\frac{\pi}{L^2}}\exp(L^2k_0^2)\exp\left(\frac{2L^2k_0 -ix_0+ix)^2}{4L^2}\right) \\
+&= \frac{\sqrt{\pi}}{L}\exp(L^2k_0^2)\exp(L^2k_0^2)\exp(ik_0(x-x_0))\exp\left(\frac{-(x-x_0)^2}{4L^2}\right)
+% &= \sqrt{\frac{\pi}{L^2}}\exp(4L^4k^2k_0^2/4L^2) \\
+% &= \frac{\sqrt{\pi}}{L}\exp(L^2k^2k_0^2)
+\end{align*}
+Clearly, this wavefunction peaks at $x=x_0$. The extra phase shift introduced simply slides it over by that factor. 
+\end{enumerate}
+\end{sol}

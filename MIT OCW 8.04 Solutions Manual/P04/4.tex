@@ -1,0 +1,11 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Notice that 
+\[\int_{-\infty}^{\infty}\dd x |\Psi (x)|^2 = \int_{-\infty}^{\infty}\dd x \Psi (x) \Psi^{*}(x) = \int_{-\infty}^{\infty} \dd x \left( \int_{-\infty}^{\infty} \dd p \Phi (p) e^{ixp}\right)\left(\int_{-\infty}^{\infty} \dd p' \Phi^{*} (p') e^{-ixp'}\right).  \]
+This can be rewritten with the dirac delta function, as $\int e^{ix (p - p')} = \delta (p - p')$, so 
+\[\int_{-\infty}^{\infty}\dd x\int_{-\infty}^{\infty}\dd p \Phi (p) \int_{-\infty}^{\infty}\dd p' \Phi^{*} (p') \delta (p - p') = \int_{-\infty}^{\infty} \dd p |\Phi (p)|^2.\]
+\item Using the standard normalization integral and taking into account the spherical symmetry of the situation: $$\int_{0}^{\infty}\left(Ne^{-r/a_0}\right)^24\pi r^2\;\mathrm{d}r = \int_{0}^{\infty}N^2e^{-2r/a_0}\;4\pi r^2\;\mathrm{d}r = \pi N^2a_0^3 = 1$$ Thus, $$N = \sqrt{\frac{1}{\pi a_0^3}}$$
+Using Parseval's theorem gives us a normalization condition for momentum wavefunctions similar to the one used in part b): $$\int_{-\infty}^{\infty}\frac{N'^2}{\left(1 + \frac{a_0^2p^2}{\hbar^2}\right)^4}\;4\pi p^2\;\mathrm{d}p = 1$$ Then, $$\int_{-\infty}^{\infty}\frac{4\pi p^2\;\mathrm{d}p}{\left(1 + \frac{a_0^2p^2}{\hbar^2}\right)^4} = \frac{\pi^2\hbar^3}{8a_0^3} \implies N' = \sqrt{\frac{8a_0^3}{\pi^2\hbar^3}}$$
+Using the probabalistic interpretation of the momentum wavefunction, the probability that the \textbf{magnitude} of the momentum exceeds $\hbar/a_0$ is: $$\int_{\hbar/a_0}^{\infty}\frac{N'^2}{\left(1 + \frac{a_0^2p^2}{\hbar^2}\right)^4}\;4\pi p^2\;\mathrm{d}p$$
+\end{enumerate}
+\end{sol}

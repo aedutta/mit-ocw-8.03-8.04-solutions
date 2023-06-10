@@ -1,0 +1,18 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item First, note that:
+\begin{align*}
+    x_0 &= \left<x\right>_{\psi_0} = \int_{-\infty}^{\infty}\psi_0^*(x)\hat{x}\psi_0(x)\;\mathrm{d}x = \int_{-\infty}^{\infty}\psi_0^*(x)x\psi_0(x)\;\mathrm{d}x \\ p_0 &= \left<p\right>_{\psi_0} = \int_{-\infty}^{\infty}\psi_0^*(x)\hat{p}\psi_0(x)\;\mathrm{d}x = -i\hbar\int_{-\infty}^{\infty}\psi_0^*(x)\frac{\partial}{\partial x}\psi_0(x)\;\mathrm{d}x
+\end{align*}
+Now, in order to calculate the expectation values of the new wavefunction, first note that: $$\psi_{new}(x) = \hat{B_q}\psi(x) = e^{iqx/\hbar}\;\psi_0(x)$$\item
+\begin{align*}
+\left<x\right>_{\psi_{new}} &= \int_{-\infty}^{\infty}\psi_{new}^*(x)\hat{x}\psi_{new}(x) \;\mathrm{d}x \\ &= \int_{-\infty}^{\infty}\psi_0^*(x)e^{-iqx/\hbar}x\psi_0(x)e^{iqx/\hbar}\;\mathrm{d}x \\ &= \int_{-\infty}^{\infty}\psi_0^*(x)x\psi_0(x)\;\mathrm{d}x \\ &= x_0
+\end{align*}
+\item
+\begin{align*}
+\left<p\right>_{\psi_{new}} &= \int_{-\infty}^{\infty}\psi_{new}^*(x)\hat{p}\psi_{new}(x) \;\mathrm{d}x \\ &= \int_{-\infty}^{\infty}\psi_0^*(x)e^{-iqx/\hbar}\hat{p}\psi_0(x)e^{iqx/\hbar}\;\mathrm{d}x \\ &= \int_{-\infty}^{\infty}\psi_0^*(x)e^{-iqx/\hbar}(-i\hbar\frac{\partial}{\partial x})\psi_0(x)e^{iqx/\hbar}\;\mathrm{d}x \\ &= -i\hbar\int_{-\infty}^{\infty}\psi_0^*(x)e^{-iqx/\hbar}(e^{iqx/\hbar}\frac{\partial \psi_0(x)}{\partial x} + \frac{iq}{\hbar}e^{iqx/\hbar}\psi_0(x))\;\mathrm{d}x \\ &= -i\hbar\int_{-\infty}^{\infty}\psi_0^*(x)\frac{\partial}{\partial x}\psi_0(x)\;\mathrm{d}x + q\int_{-\infty}^{\infty}\psi_0^*(x)\psi_0(x)\;\mathrm{d}x \\ &= p_0 + q
+\end{align*}
+\item The boost operator has no effect on the measurement of the position, since the magnitude of the wavefunction is not changing (that is the only relevant matter when calculating a position-space probability distribution). However, the expected value of the momentum is "translated" by a constant value, based on the value $q$ of the boost operator.
+\item For the momentum-boost commutator: $$[\hat{p}, \hat{B_q}]\psi(x) = \hat{p}\hat{B_q}\psi(x) - \hat{B_q}\hat{p}\psi(x) = -i\hbar\frac{\partial}{\partial x}\left(e^{iqx/\hbar}\psi(x)\right) - e^{iqx/\hbar}(-i\hbar)\frac{\partial\psi(x)}{\partial x}$$ Using the product rule and expanding and cancelling terms: $$[\hat{p}, \hat{B_q}]\psi(x) = q\psi(x) \implies [\hat{p}, \hat{B_q}] = q$$ For the position-boost commutator: $$[\hat{x}, \hat{B_q}] = \hat{x}\hat{B_q} - \hat{B_q}\hat{x} = xe^{iqx/\hbar} - e^{iqx/\hbar}x = 0$$
+\end{enumerate}
+\end{sol}

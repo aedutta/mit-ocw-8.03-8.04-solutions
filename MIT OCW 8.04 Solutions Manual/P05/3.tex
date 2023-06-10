@@ -1,0 +1,48 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Substituting the given wavefunction into the time-dependent Schrodinger equation:
+\begin{align*}
+    i\hbar\frac{\partial\Psi_n(x, t)}{\partial t} 
+    &= -\frac{\hbar^2}{2m}\frac{\partial^2\Psi_n(x, t)}{\partial x^2}
+    \\
+    i\hbar\frac{\partial}{\partial t}\left(\sin{\left(\frac{n\pi}{a}x\right)}e^{-i\phi_n(t)}\right)
+    &= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}   
+        \left(\sin{\left(\frac{n\pi}{a}x\right)}e^{-i\phi_n(t)}\right)
+    \\
+    i\hbar\left(\sin{\left(\frac{n\pi}{a}x\right)}e^{-i\phi_n(t)}\right)\left(-i\phi_n(t)\phi\right)
+        \frac{d \phi_n(t)}{d t}
+    &= \frac{\hbar^2}{2m}\left(\sin{\left(\frac{n\pi}{a}x\right)}e^{-i\phi_n(t)}\right)
+        \left(\frac{n\pi}{a}\right)^2
+    \\
+    \int \phi_n d\phi &=\int \frac{h\pi^2n^2}{2ma^2} dt
+    \\
+    \phi_n &= \frac{\pi n}{a}\sqrt{\frac{ht}{m}}
+\end{align*}
+% \begin{align*}
+%     -i\hbar\frac{\partial\Psi_n(x, t)}{\partial t} &= -\frac{\hbar^2}{2m}\frac{\partial^2\Psi_n(x, t)}{\partial x^2} \\ -i\hbar\frac{\partial}{\partial t}\left(\sin{\left(\frac{n\pi}{a}x\right)}e^{-i\phi_n(t)}\right) &= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\left(\sin{\left(\frac{n\pi}{a}x\right)}e^{-i\phi_n(t)}\right) \\ -i\hbar\left(\sin{\left(\frac{n\pi}{a}x\right)}e^{-i\phi_n(t)}\right)\frac{\partial \phi_n(t)}{\partial t} &= \frac{\hbar^2}{2m}\left(\sin{\left(\frac{n\pi}{a}x\right)}e^{-i\phi_n(t)}\right)\left(\frac{n\pi}{a}\right)^2
+% \end{align*}
+% Solving for the time derivative of the phase: $$\frac{\partial \phi_n(t)}{\partial t} = \frac{i\hbar\pi^2n^2}{2ma^2}$$Thus, assuming $\phi_n(0) = 0$, we obtain that $\phi_n(t) = \frac{i\hbar\pi^2n^2}{2ma^2}t$.
+where we have assumed $\phi_n(0)=0$.
+\newline
+To solve for the normalization constant, we can ignore the phase (it does not affect the magnitude of the wavefunction). Setting the normalization integral to unity: $$\int_{0}^{a}N^2\sin^2{\left(\frac{n\pi}{a}x\right)}\;\mathrm{d}x = \frac{aN^2}{2} = 1 \implies N = \sqrt{\frac{2}{a}}$$
+\item The expectation value of $\langle x \rangle$ is:
+\begin{align*}
+    \langle x \rangle &= N^2\int_0^a x\sin^2\left(\frac{n\pi}{a}x\right) \\
+    &= \frac{a}{2}
+\end{align*}
+as expected, since there is even symmetry around the center. To determine $\langle x^2 \rangle$, we perform the same operation to get
+$$\langle x^2 \rangle = \frac{a^{2}\left(2\pi^{2}n^{2}-3\right)}{6\pi^{2}n^{2}}$$
+Therefore:
+$$(\Delta x)^2=\frac{a^{2}\left(2\pi^{2}n^{2}-3\right)}{6\pi^{2}n^{2}}-\frac{a^2}{4}$$
+\item To calculate $\Delta p$, we do it in a similar way. The momentum operator is:
+$$\hat{p}=-i\hbar\frac{\partial}{\partial x}$$
+so we have:
+$$\langle p \rangle =0$$
+and
+$$\langle p^2 \rangle = (\Delta p)^2=\frac{\hbar^2 n^2 \pi^2}{a^2}$$
+\item The uncertainty principle gives us:
+$$\Delta x\Delta p = \frac{\hbar}{2}\sqrt{\frac{\pi^2n^2-6}{3}}$$
+This is minimized when $n=1$, which satisfies the uncertainty principle.
+\item Since $\phi$ is real and $V(x)$ is a constant, then both the momentum uncertainty and position uncertainty will not change with respect to time.
+\end{enumerate}
+\end{sol}

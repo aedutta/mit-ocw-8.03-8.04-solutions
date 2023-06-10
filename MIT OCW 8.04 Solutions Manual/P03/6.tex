@@ -1,0 +1,30 @@
+\begin{sol}
+First note that: $$ J(x) = \frac{\hbar}{m}\operatorname{Im}(\Psi^*(x)\frac{\partial \Psi(x)}{\partial x}) = \frac{\hbar}{2im}(\Psi^*(x)\frac{\partial \Psi(x)}{\partial x} - \Psi(x)\frac{\partial \Psi^*(x)}{\partial x})$$
+Then,
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item $\Psi(x) = Ae^{\gamma x}$:
+\begin{align*}J(x) &= \frac{\hbar}{2im}(A^*e^{\gamma x}\frac{\partial }{\partial x}(Ae^{\gamma x}) - Ae^{\gamma x}\frac{\partial}{\partial x}(A^*e^{\gamma x})) \\ &= \frac{\hbar|A|^2}{2im}(e^{\gamma x}\frac{\partial}{\partial x}(e^{\gamma x}) - e^{\gamma x}\frac{\partial}{\partial x}(e^{\gamma x})) \\ &= 0
+\end{align*}
+Alternatively,
+\begin{align*}
+    J(x) &= \frac{\hbar}{m}\operatorname{Im}(A^*e^{\gamma x}\frac{\partial}{\partial x}(Ae^{\gamma x})) \\ &= \frac{\hbar}{m}\operatorname{Im}(AA^*\gamma e^{2\gamma x}) \\ &= 0
+\end{align*}
+\item $\Psi(x) = N(x)e^{iS(x)/\hbar}$:
+\begin{align*}
+    J(x) &= \frac{\hbar}{2im}(N(x)e^{-iS(x)/\hbar}\frac{\partial}{\partial x}(N(x)e^{iS(x)/\hbar}) - N(x)e^{iS(x)/\hbar}\frac{\partial}{\partial x}(N(x)e^{-iS(x)/\hbar})) \\ &= \frac{1}{m}N(x)^2\frac{\partial S(x)}{\partial x}
+\end{align*}
+Alternatively,
+\begin{align*}
+    J(x) &= \frac{\hbar}{m}\operatorname{Im}(N(x)e^{-iS(x)/\hbar}\frac{\partial}{\partial x}(N(x)e^{iS(x)/\hbar})) \\ &= \frac{\hbar}{m}\operatorname{Im}(N(x)^2 * i\frac{\partial S(x)}{\partial x}/\hbar) \\ &= \frac{1}{m}N(x)^2\frac{\partial S(x)}{\partial x}
+\end{align*}
+\item $\Psi(x) = Ae^{ikx} + Be^{-ikx}$:
+\begin{align*}
+    J(x) &= \frac{\hbar}{2im}((A^*e^{-ikx} + B^*e^{ikx})\frac{\partial}{\partial x}(Ae^{ikx} + Be^{-ikx}) - (Ae^{ikx} + Be^{-ikx})\frac{\partial}{\partial x}(A^*e^{-ikx} + B^*e^{ikx})) \\ &= \frac{\hbar k}{m}(AA^* - BB^*) \\ &= \frac{\hbar k}{m}(|A|^2 - |B|^2)
+\end{align*}
+Alternatively,
+\begin{align*}
+    J(x) &= \frac{\hbar}{m}\operatorname{Im}((A^*e^{-ikx} + B^*e^{ikx})\frac{\partial}{\partial x}(Ae^{ikx} + Be^{-ikx})) \\ &= \frac{\hbar}{m}(AA^* - BB^*) \\ &= \frac{\hbar}{m}(|A|^2 - |B|^2)
+\end{align*}
+
+\end{enumerate}
+\end{sol}

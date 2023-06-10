@@ -1,0 +1,54 @@
+\begin{sol}
+First, we prove the fact stated in the problem for $z = re^{i\theta}$: $$\frac{\operatorname{Re}(z)}{|z|^2} = \frac{r\cos\theta}{r^2} = \frac{\cos\theta}{r} = \frac{\cos{\left(-\theta\right)}}{r} = \operatorname{Re}\left(\frac{1}{z}\right)$$ Also, note by the normalization condition that: $$\int_{-\infty}^{\infty}|\psi(x)|^2\;\mathrm{d}x = N^2\int_{-\infty}^{\infty}\operatorname{exp}\left(\operatorname{Re}\left(-\frac{x^2}{2\Delta^2}\right)\right)^2\mathrm{d}x = N^2\int_{-\infty}^{\infty}\operatorname{exp}\left(-\frac{x^2\operatorname{Re}\left(\Delta^2\right)}{|\Delta|^4}\right)\mathrm{d}x =1$$
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item For both momentum and position calculations, we can again note by symmetry that $\left<x\right>=0$ and $\left<p\right>=0$. Then,
+\begin{align*}
+\left(\Delta x\right)^2 &= \left<x^2\right> - 0^2\\ &= \int_{-\infty}^{\infty}\psi^*(x)\;\hat{x}^2\;\psi(x)\;\mathrm{d}x \\ &= \int_{-\infty}^{\infty}x^2\;|\psi(x)|^2\;\mathrm{d}x \\ &= N^2\int_{-\infty}^{\infty}x^2\operatorname{exp}\left(\operatorname{Re}\left(-\frac{x^2}{2\Delta^2}\right)\right)^2\mathrm{d}x \\ &= N^2\int_{-\infty}^{\infty}x^2\operatorname{exp}\left(-\frac{x^2\operatorname{Re}\left(\Delta^2\right)}{|\Delta|^4}\right)\mathrm{d}x \\ &= \frac{|\Delta|^4}{2\operatorname{Re}\left(\Delta^2\right)}N^2\int_{-\infty}^{\infty}\operatorname{exp}\left(-\frac{x^2\operatorname{Re}\left(\Delta^2\right)}{|\Delta|^4}\right)\mathrm{d}x \\ &= \frac{|\Delta|^4}{2\operatorname{Re}\left(\Delta^2\right)}
+\end{align*}
+\begin{align*}
+\left(\Delta p\right)^2 &= \left<p^2\right> - 0^2  \\ &= \int_{-\infty}^{\infty}\psi^*(x)\;\hat{p}^2\;\psi(x)\;\mathrm{d}x \\ &= -\hbar^2N^2\int_{-\infty}^{\infty}\operatorname{exp}^*\left(-\frac{x^2}{2\Delta^2}\right)\frac{\partial^2}{\partial x^2}\left(\operatorname{exp}\left(-\frac{x^2}{2\Delta^2}\right)\right) \\ &= -\frac{\hbar^2N^2}{\Delta^4}\int_{-\infty}^{\infty}\left(x^2 -\Delta^2\right)\operatorname{exp}\left(-\frac{x^2\operatorname{Re}\left(\Delta^2\right)}{|\Delta|^4}\right)\mathrm{d}x \\ &= -\frac{\hbar^2N^2|\Delta|^4}{2\Delta^4\operatorname{Re}\left(\Delta^2\right)}\int_{-\infty}^{\infty}\operatorname{exp}\left(-\frac{x^2\operatorname{Re}\left(\Delta^2\right)}{|\Delta|^4}\right)\mathrm{d}x + \frac{\hbar^2N^2}{\Delta^2}\int_{-\infty}^{\infty}\operatorname{exp}\left(-\frac{x^2\operatorname{Re}\left(\Delta^2\right)}{|\Delta|^4}\right)\mathrm{d}x \\ &= -\frac{\hbar^2|\Delta|^4}{2\Delta^4\operatorname{Re}\left(\Delta^2\right)}+ \frac{\hbar^2}{\Delta^2}
+\end{align*}
+Letting $|\Delta|^4=(\Delta^2)^*\Delta^2$ and $2\Re(\Delta^2)=(\Delta^2)^*+\Delta^2$, we can simplify this expression to
+$$(\Delta p)^2 = \frac{\hbar^2}{2\Re(\Delta^2)}$$
+\item \begin{align*}
+\phi(p) &= \frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^{\infty}\psi(x)\;e^{-ipx/\hbar}\;\mathrm{d}x \\ &= \frac{N}{\sqrt{2\pi\hbar}}\int_{-\infty}^{\infty}\operatorname{exp}\left(-\frac{x^2}{2\Delta^2} - \frac{ipx}{\hbar}\right)\mathrm{d}x \\ &= \frac{N}{\sqrt{2\pi\hbar}}\sqrt{2\pi\Delta^2}\operatorname{exp}\left(-\frac{p^2\Delta^2}{2\hbar^2}\right) \\ &= \frac{N\Delta}{\sqrt{\hbar}}\operatorname{exp}\left(-\frac{p^2\Delta^2}{2\hbar^2}\right)
+\end{align*}
+This result can be shown to be correct using Parseval's Theorem:
+\begin{align*}
+    1 &= \int_{-\infty}^{\infty} |\Phi(p)|^2 dp \\
+    &= \frac{N^2|\Delta|^2}{\hbar}\int_{-\infty}^{\infty} \exp\left(-\frac{p^2\Re(\Delta^2)}{\hbar^2}\right)dp\\
+    &= N^2|\Delta|^2\sqrt{\frac{\pi}{\Re(\Delta^2)}}
+\end{align*}
+This is the same normalization condition that we originally stated where we worked in position space. The uncertainty is thus
+\begin{align*}
+    (\Delta p)^2 &= \int_{-\infty}^{\infty} p^2|\Phi|^2 dp \\
+    &= \frac{N^2|\Delta|^2}{\hbar}\int_{-\infty}^{\infty}p^2\exp\left(\frac{-p^2}{\hbar^2}\Re(\Delta^2)\right) dp \\
+    &= \frac{\hbar^2}{2\Re(\Delta^2)}\frac{N^2|\Delta|^2}{\hbar}\int_{-\infty}^{\infty}\exp\left(\frac{-p^2}{\hbar^2}\Re(\Delta^2)\right) dp \\
+    &= \frac{\hbar^2}{2\Re(\Delta^2)}
+\end{align*}
+where we have used our earlier normalization condition.
+\item We have:
+\begin{align*}
+    (\Delta x\Delta p)^2 &= \frac{\hbar^2}{4}\left(\frac{|\Delta|^4}{\Re(\Delta^2)^2}\right) \\
+    &= \frac{\hbar^2}{4}\left(\frac{|\Delta|^4}{\Re(|\Delta|^2e^{i2\Phi_\Delta})^2}\right) \\
+    &= \frac{\hbar^2}{4}\left(\frac{|\Delta|^4}{(|\Delta|^2\cos(2\phi_\Delta))^2}\right) \\
+    \Delta x\Delta p &= \frac{\hbar}{2\cos(2\Phi_\Delta)}
+\end{align*}
+For $\Phi_\Delta=0$, then $\Delta$ becomes real and it becomes identical to the first problem. For $\Phi_\Delta \to \pi/4$, the product $\Delta x\Delta p \to \infty$. This is because at this limit, $\Delta^2$ becomes purely imaginary. Thus, we get a pure phase with a constant oscillation and no dampening effect, causing there to be infinite momentum and position eigenstates with the same probability, causing their uncertainty to become infinite as well. 
+\item In problem three, the given wavefunction was:
+$$\Psi = N\exp\left(-\frac{x^2}{4a^2}\right)$$
+Therefore, $\Delta^2=2a^2$. The uncertainty at $t=0$ is then:
+$$(\Delta p)^2=\frac{\hbar^2}{2a^2}$$
+Including the time dependence, the wavefunction becomeS:
+$$\Psi(x,t)=N\exp\left(-\frac{mx^2}{2\hbar(\tau+it)}\right)$$
+where $\tau=\frac{2ma^2}{\hbar}$. Therefore:
+$$
+\Delta^2 = \frac{\hbar(\tau+it)}{m}
+$$
+and
+$$
+\Re(\Delta^2)=\frac{\hbar\tau}{m} \implies \Delta^2=2a^2
+$$
+which is equivalent to the time $t=0$ case, showing that the momentum uncertainty is indeed time independent.
+\end{enumerate}
+\end{sol}

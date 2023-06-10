@@ -1,0 +1,40 @@
+\begin{sol}
+We can solve this generally, but before we do so, we need to state and prove the following lemmas:
+\newline
+\begin{lemma}
+If $\displaystyle A=\binom{u_1}{u_2}$ is a $1\times 2$ matrix then $A^\dagger A = |u_1|^2+|u_2|^2$
+\end{lemma}
+
+\begin{prooof}
+By definition, the Hermitian $A^\dagger$ can be written as $\begin{pmatrix}u_1^* & u_2^*\end{pmatrix}$ so their product gives:
+$$\begin{pmatrix}u_1^* & u_2^*\end{pmatrix}
+\begin{pmatrix}u_1 \\ u_2\end{pmatrix} = u_1^*u_1 + u_2^*u_2 = |u_1|^2+|u_2|^2
+$$
+\end{prooof}
+Thus, when the question acts for the conservation of probability, an equivalent statement is to set the equality
+$$u^\dagger u=u'^\dagger u' = 1$$
+\begin{lemma}
+If $R$ is a $2\times 2$ matrix and $u$ is a $1\times2$ matrix, then $(Ru)^\dagger=u^\dagger R^\dagger$
+\end{lemma}
+\begin{prooof}
+Generalize our matrices as $\displaystyle R = \begin{pmatrix} a & b \\ c & d\end{pmatrix}$ and $\displaystyle u=\binom{u_1}{u_2}$. Then:
+\begin{align*}
+    (Ru)^\dagger &= \left[\begin{pmatrix} a & b \\ c & d\end{pmatrix}\binom{u_1}{u_2}\right]^\dagger \\
+    &= \begin{pmatrix}au_1+bu_2 \\ cu_1+du_2\end{pmatrix}^\dagger \\
+    &= \begin{pmatrix}a^*u_1^*+b^*u_2^* & c^*u_1^*+d^*u_2^*\end{pmatrix}
+\end{align*}
+and similarly
+\begin{align*}
+    u^\dagger R^\dagger &= \begin{pmatrix}u_1^* & u_2^*\end{pmatrix}\begin{pmatrix} a^* & c^* \\ b^* & d^*\end{pmatrix} \\
+    &= \begin{pmatrix}a^*u_1^*+b^*u_2^* & c^*u_1^*+d^*u_2^*\end{pmatrix}
+\end{align*}
+\end{prooof}
+With these out of the way, the proof becomes trivial. All we need to show is that:
+\begin{align*}
+    u'^\dagger u' &= (Ru)^\dagger (Ru) \\
+    &= u^\dagger (R^\dagger R) u
+\end{align*}
+If we wish to end up with the equality:
+$$u^\dagger u=u'^\dagger u' = 1$$
+then it must be true that $R^\dagger R=I$, or in other words: $R$ is unitary.
+\end{sol}

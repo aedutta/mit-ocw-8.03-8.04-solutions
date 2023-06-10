@@ -1,0 +1,42 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item For $0<x<a$, we have:
+$$\frac{\partial^2}{\partial x^2}\Psi = -\frac{2mE}{\hbar^2} \equiv = -k^2\Psi$$
+and the solution is:
+$$\Psi_1=\sin(kx)$$
+For $a<x<2a$, we have:
+$$\frac{\partial^2}{\partial x^2}\Psi=-\frac{2m}{\hbar^2}(E-V)\Psi \equiv -\kappa^2\Psi$$
+where $\kappa^2 < 0$. This solution is in the exponential form of:
+$$\Psi_2=Ae^{-kx}+Be^{kx}$$
+We have three boundary conditions:
+\begin{itemize}
+    \item $\Psi_1(a)=\Psi_2(a)$
+    \item $\Psi_1'(a)=\Psi_2'(a)$
+    \item $\Psi_2'(2a)=0$
+\end{itemize}
+Using these boundary conditions, we get the equations:
+\begin{align*}
+    \sin(ka)&=Ae^{-\kappa a}+Be^{\kappa a} \\
+    k\cos(ka) &= -\kappa A e^{-\kappa a}+\kappa Be^{\kappa a} \\
+    0 &= Ae^{-2\kappa a} + Be^{2\kappa a}
+\end{align*}
+Rearranging the last equation, we get:
+$$A=-Be^{4\kappa a}$$
+and substituting this into the first two equations gives:
+\begin{align*}
+    \sin(ka)&=-Be^{3\kappa a}+Be^{\kappa a} \\
+    k\cos(ka) &= \kappa Be^{3\kappa a}+\kappa Be^{\kappa a}
+\end{align*}
+Dividing these two equations then give us:
+$$\frac{1}{k}\tan(ka)=\frac{1}{\kappa}\frac{e^{\kappa a}-e^{3\kappa a}}{e^{\kappa a}+e^{3\kappa a}}$$
+and makng everything a dimensionless number, we are left with:
+$$\tan(\eta)=\frac{\eta}{\xi}\frac{e^\xi-e^{3\xi}}{e^\xi+e^{3\xi}}$$
+As with usual, we also have:
+$$z_0^2=\eta^2+\xi^2$$
+and the number of possible energy levels correspond to the number of solutions between these two equations.
+\item Letting $z_0=2\pi$ gives $2$ solutions. We can determine their energies as:
+$$E=\left(\frac{\eta}{2\pi}\right)^2$$
+giving $E=0.18436V_0$ and $E=0.70747V_0$ respectively.
+
+\end{enumerate}
+\end{sol}

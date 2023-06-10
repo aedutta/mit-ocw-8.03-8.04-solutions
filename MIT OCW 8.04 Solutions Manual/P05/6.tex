@@ -1,0 +1,22 @@
+\begin{sol}
+We break into two cases: $0\le x < a$ and $a \le x$. For the first case, the Schrodinger equation gives
+$$\frac{\partial^2 \Psi}{\partial x^2} = -\frac{2m}{\hbar^2}(V-E)\Psi$$
+Letting $k^2=\frac{2m}{\hbar^2}(V-E)$, we get:
+$$\Psi = \sin(kx)$$
+For $x\ge a$, our Schrodinger equation gives
+$$\frac{\partial^2 \Psi}{\partial x^2} = \frac{2mE}{\hbar^2}\Psi$$
+instead. Letting $\kappa^2=\frac{2mE}{\hbar^2}$, we get:
+$$\Psi = Ae^{-kx}$$
+Letting $\eta=ak$ and $\xi=a\kappa$, then we get:
+$$z_0^2=\eta^2+\xi^2$$
+which is the equation of a circle of the coordinate axes are $\eta$ and $\xi$.
+At the boundary, $\Psi$ must be continuous so
+$$\sin(ka)=Ae^{-\kappa a}$$
+Taking the derivative, we get:
+$$k\cos(ka)=-\kappa Ae^{-\kappa a}$$
+Dividing through, we get:
+$$\xi=-\eta \cot \eta$$
+To have three solutions, we need the lines $\xi=-\eta \cot \eta$ and $z_0^2=\eta^2+\xi^2$ to intersect three times for positive values. We see that this must mean that the minimum value of $z_0$ is
+$$z_0=\frac{5\pi}{2}$$
+This is analogous to the odd case of the finite square well where both sides have a finite energy.d
+\end{sol}

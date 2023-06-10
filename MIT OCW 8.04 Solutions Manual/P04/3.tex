@@ -1,0 +1,16 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Use the normalization integral to confirm the wavefunction is normalized.$$
+	\int_{-\infty}^{\infty}|\Psi_a(x, 0)|^2\;\mathrm{d}x = \int_{-\infty}^{\infty}\left(\frac{1}{(2\pi)^{1/4}\sqrt{a}}e^{-x^2/4a^2}\right)^2\;\mathrm{d}x = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}a}e^{-x^2/2a^2}\;\mathrm{d}x $$
+Now, we can make the following u-substitution: $$u = \frac{x}{a\sqrt{2}},\;\mathrm{d}u = \frac{a}{\sqrt{2}}\mathrm{d}x$$Then, $$\int_{-\infty}^{\infty}|\Psi_a(x, 0)|^2\;\mathrm{d}x = \frac{1}{\sqrt{\pi}}\int_{-\infty}^{\infty}e^{-u^2}\;\mathrm{d}u = 1$$
+This result satisfies the normalization condition (note: we used the standard result of the Gaussian integral for the calculation above)
+\item Using the inverse Fourier transform: 
+\begin{align*}
+\Phi_a(k) &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi_a(x, 0)\;e^{-ikx}\;\mathrm{d}x \\ &= \frac{1}{(2\pi)^{3/4}\sqrt{a}}\int_{-\infty}^{\infty}e^{-x^2/4a^2 - ikx}\;\mathrm{d}x \\ &= \frac{1}{(2\pi)^{3/4}\sqrt{a}}\sqrt{4\pi a^2}e^{-k^2a^2} \\ &= \left(\frac{2a}{\pi}\right)^{1/4}e^{-a^2k^2}
+\end{align*}
+\item Since the particle is free, the potential is always zero. Thus, $$E = \hbar\omega = \frac{(\hbar k)^2}{2m} \implies \omega = \frac{\hbar k^2}{2m}$$ Then, we can use the result from b) for $\Phi(k)$ to time evolve the wavepacket. 
+\begin{align*}
+\Psi_a(x, t) &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Phi_a(k)\;e^{i(kx - \omega t)}\;\mathrm{d}k \\ &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\mathrm{d}k\;\left(\frac{2a}{\pi}\right)^{1/4}\operatorname{exp}(-a^2k^2 + i(kx - \frac{\hbar k^2}{2m}t)) \\ &= \left(\frac{a}{2\pi^3}\right)^{1/4}\int_{-\infty}^{\infty}\mathrm{d}k\;\operatorname{exp}(-(a^2 + \frac{i\hbar}{2m}t)k^2 + ixk) \\&= \left(\frac{a}{2\pi^3}\right)^{1/4}\int_{-\infty}^{\infty}\mathrm{d}k\;\operatorname{exp}(-\frac{\hbar}{2m}(\tau + it)k^2 + ixk) \\ &= \left(\frac{a}{2\pi^3}\right)^{1/4}\sqrt{-\frac{2m}{\hbar(\tau + it)}}\operatorname{exp}\left(-\frac{mx^2}{2\hbar(\tau + it)}\right)
+\end{align*}
+\end{enumerate}
+\end{sol}

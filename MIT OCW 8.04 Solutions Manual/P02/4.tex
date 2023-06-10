@@ -1,0 +1,83 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item The matrix of the beam splitter can be represented like so: 
+BS = $\begin{pmatrix} r & t \\ t & -r \end{pmatrix}$
+The matrix can be shown to be unitary by calculating its conjugate transpose (which in this case, happens to be itself) and multiplying the two matrices, which ultimately results in the identity matrix
+\item \textbf{Defective bomb:} We can simply apply the BS matrix to $\begin{pmatrix} 1 \\ 0\end{pmatrix}$ (which represents the photon coming from the top). Thus:
+$$
+\begin{pmatrix} 
+P_0 \\ 
+P_1
+\end{pmatrix} =
+\begin{pmatrix}
+r & t \\
+t & -r 
+\end{pmatrix}
+\begin{pmatrix}
+r & t \\
+t & -r
+\end{pmatrix}
+\begin{pmatrix}
+1 \\ 
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 \\
+0
+\end{pmatrix}
+$$
+\textbf{Working bomb:} First let's see what happens after the light goes through the first beam splitter. We apply the BS matrix to $\begin{pmatrix} 1 \\ 0\end{pmatrix}$. Thus:
+$$
+\begin{pmatrix}
+r & t \\
+t & -r 
+\end{pmatrix}
+\begin{pmatrix}
+1 \\ 
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+r \\
+t
+\end{pmatrix}
+$$
+We will now consider two cases:
+\begin{itemize}
+\item Case 1: Bomb does not Explode - This has a chance of $r^2$ of happening and can be thought of as sending a $\begin{pmatrix}r\\0\end{pmatrix}$ beam through the second BS matrix. This leads to athe state of the exit beam being
+$$
+\begin{pmatrix}
+r^2 \\
+rt
+\end{pmatrix}
+=
+\begin{pmatrix}
+r^2 \\
+r\sqrt{1-r^2}
+\end{pmatrix}
+$$
+\item Case 2: Bomb explodes - rip gg
+\end{itemize}
+Therefore, the probabilities are thus
+$$
+\begin{pmatrix} 
+P_0 \\ 
+P_1
+\end{pmatrix} =
+\begin{pmatrix}
+r^4 \\
+r^2-r^4
+\end{pmatrix}
+=
+\begin{pmatrix}
+R^2 \\
+R-R^2
+\end{pmatrix}
+$$
+\item We can only reasonably certify a working bomb if it ends up striking the detector $D_1$. This has a probability of $p_1=R-R^2$ of happening. Some bombs may explode and for the rest, there is a probability of $p_0=R^2$ of striking $D_0$. If we start with $N$ bombs, then after the first round we will need to test the remaining $p_0N$ bombs, of which $p_0p_1N$ will be certified. This gives the recursive series:
+$$p_1(1+p_0+p_0^2+p_0^3\cdots)=\frac{p_1}{1-p_0}=\frac{R-R^2}{1-R^2}=\frac{R}{R+1}$$
+This reaches a maximum as $R \to 1$ but $R \neq 1$. We can interpret this physically as: although we can verify almost half of all the bombs, it may take an extremely long time.
+\end{enumerate}
+
+\end{sol}

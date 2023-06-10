@@ -1,0 +1,23 @@
+\begin{sol}
+A Taylor expansion gives us, letting $\phi \equiv kx-\omega t$
+\begin{align*}
+    \cos (\phi+\epsilon) + \gamma\sin(\phi+\epsilon) &= \cos\phi-\epsilon\sin\phi+\gamma\sin\phi+\epsilon\gamma\cos\phi \\
+    &= (1+\gamma\epsilon)\cos\phi+(\gamma-\epsilon)\sin\phi \\
+\end{align*}
+Setting this equal to
+$$a\cos\phi+a\gamma\sin\phi$$
+allows us to compare coefficients, giving us two equations:
+\begin{align*}
+    1+\gamma\epsilon = a \\
+    \gamma-\epsilon=a\gamma
+\end{align*}
+Solving this gives:
+$$\gamma = \pm i$$
+and
+$$a = 1 \pm \gamma \epsilon$$
+We understand that the conventional description for a plane matter wave is:
+$$\Psi_0=e^{i\phi}$$
+such that if the phase is shifted by $\epsilon$, then
+$$\Psi=e^{i\phi}e^{i\epsilon}=\Psi_0 (1+i\epsilon)$$
+Therefore, the only solution that describes the behaviour is $\gamma=i$.
+\end{sol}

@@ -1,0 +1,15 @@
+\begin{sol}
+We know that the expecation value of an operator is given by
+$$\langle [\hat{p},H] \rangle = i\hbar \frac{d\langle \hat{p}\rangle}{dt}$$
+where we have chosen our operator to be our momentum operator $\hat{p}=-i\hbar \frac{\partial}{\partial x}$. It turns out that given $V=0$, the momentum operator commutes with the Hamiltonian:
+\begin{align*}
+    [\hat p,H]f &= (\hat pH - H\hat p)f \\
+    &= \hat p \left(\frac{\hat{p}^2}{2m}+V\right)f - \hat p \left(\frac{\hat{p}^2}{2m}+V\right)f \\
+    &= -i\hbar \frac{\partial f}{\partial x}(Vf) + Vi\hbar \frac{\partial f}{\partial x} \\
+    &= -i\hbar V\frac{\partial f}{\partial x}-i\hbar \frac{\partial V}{\partial x}f + i\hbar V\frac{\partial f}{\partial x} \\
+    &= -i\hbar \frac{\partial V}{\partial x}
+\end{align*}
+If $V$ is a constant, which is true for a free Schrodinger wave, then that implies $\langle \hat{p} \rangle$ is a constant and thus its eigenvalue is also a constant. We can similarly show that this result is true for $\langle \hat{p}^2 \rangle$ as well. Therefore:
+$$\sigma_p = \langle p^2 \rangle - \langle p \rangle ^2$$
+is also a constant.
+\end{sol}

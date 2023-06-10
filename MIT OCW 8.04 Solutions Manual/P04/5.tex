@@ -1,0 +1,58 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item First, we prove that $\frac{d}{dt}\left<p\right> = \left<-\frac{\partial V}{\partial x}\right>$. 
+\begin{proof}
+We can do this by first analyzing the average momentum 
+\[\left<p\right> = -i\hbar \int \psi^* \frac{\partial\psi}{\partial x}dx.\]
+Taking the derivative of this gets us 
+\begin{align*}
+    \frac{d}{dt}\left<p\right> &= (-i\hbar)\frac{d}{dt}\int \psi^* \frac{\partial \psi}{\partial x} dx\\
+    &= (-i\hbar)\int \frac{\partial}{\partial t}\left(\psi^* \frac{\partial\psi}{\partial x}\right)dx\\
+    &= (-i\hbar)\int \left[\frac{\partial \psi^*}{\partial t}\cdot \frac{\partial \psi}{\partial x} + \psi^*\frac{\partial}{\partial x}\frac{\partial \psi}{\partial t}\right]dx
+\end{align*}
+Note that the last step was performed via chain rule. Let us now analyze the Time Dependent Schrodinger equation,
+\[-\frac{\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2} + V\psi = i\hbar\frac{\partial \psi}{\partial t}.\]
+Carrying some manipulations on the Time Dependent Schrodinger equation gives us
+\begin{align*}
+    \frac{\partial \psi}{dt} &= \frac{1}{i\hbar}\left(\frac{-\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2} + V\psi\right)\\
+    &= \frac{-i}{\hbar}\left(\frac{-\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2} + V\psi\right)\\
+    &= \frac{i\hbar}{2m}\frac{\partial^2\psi}{\partial x^2} - \frac{i}{\hbar}V\psi.
+\end{align*}
+We can now plug these results back into our first expression for $\frac{d}{dt}\left<p\right>$. 
+\[\frac{d}{dt}\left<p\right> = (-i\hbar)\int\left[\left(\frac{-i\hbar}{2m}\frac{\partial^2\psi}{\partial x^2} + \frac{i}{\hbar}V\psi\right)\frac{\partial \psi}{\partial x} + \psi^*\frac{\partial}{\partial x}\left(\frac{i\hbar}{2m}\frac{\partial^2\psi}{\partial x^2} - \frac{i}{\hbar}V\psi\right)\right]dx\]
+Separating this integral gives us 
+\begin{align*}
+    \frac{d}{dt}\left<p\right> &= (-i\hbar)\left(-\frac{i\hbar}{2m}\right)\int\left[\frac{\partial^2\psi^*}{\partial x^2}\frac{\partial \psi}{\partial x} - \psi^*\frac{\partial}{\partial x}\left(\frac{\partial^2\psi}{\partial x^2}\right)\right] - (i\hbar)\left(\frac{i}{\hbar}\right)\int\left[V\psi^*\frac{\partial \psi}{\partial x} - \psi^*\frac{d}{dx}(V\psi)\right]dx\\
+    &= \left(-\frac{\hbar^2}{2m}\right)\int\left[\frac{\partial^2\psi^*}{\partial x^2}\frac{\partial \psi}{\partial x} - \psi^*\frac{\partial}{\partial x}\left(\frac{\partial^2\psi}{\partial x^2}\right)\right] + \int\left[V\psi^*\frac{\partial \psi}{\partial x} - \psi^*\frac{d}{dx}(V\psi)\right]dx.
+\end{align*}
+Now, note that 
+\[\frac{d}{dx}(V\psi) = \frac{dV}{dx}\psi - V\frac{\partial \psi}{\partial x}.\]
+Therefore, 
+\begin{align*}
+    \frac{d}{dt}\left<p\right> &= \left(-\frac{\hbar^2}{2m}\right)\int\left[\frac{\partial^2\psi^*}{\partial x^2}\frac{\partial \psi}{\partial x} - \psi^*\frac{\partial}{\partial x}\left(\frac{\partial^2\psi}{\partial x^2}\right)\right] + \int\left[V\psi^*\frac{\partial \psi}{\partial x} - \psi^*\frac{dV}{dx}\psi - V\psi^*\frac{\partial \psi}{\partial x}\right]dx\\
+    &= \left(-\frac{\hbar^2}{2m}\right)\int\left[\frac{\partial^2\psi^*}{\partial x^2}\frac{\partial \psi}{\partial x} - \psi^*\frac{\partial}{\partial x}\left(\frac{\partial^2\psi}{\partial x^2}\right)\right] + \int\left[\cancel{V\psi^*\frac{\partial \psi}{\partial x}} - \psi^*\frac{dV}{dx}\psi - \cancel{V\psi^*\frac{\partial \psi}{\partial x}}\right]dx\\
+    &= \left(-\frac{\hbar^2}{2m}\right)\int\left[\frac{\partial^2\psi^*}{\partial x^2}\frac{\partial \psi}{\partial x} - \psi^*\frac{\partial}{\partial x}\left(\frac{\partial^2\psi}{\partial x^2}\right)\right] + \int\left[ - \psi^*\frac{dV}{dx}\psi\right]dx
+\end{align*}
+Now, this is where the exciting part happens. Note that 
+\[\int\left[ - \psi^*\frac{dV}{dx}\psi\right]dx = \left<-\frac{\partial V}{\partial x}\right>\]
+therefore, rewriting the integral once again gives us 
+\[\frac{d}{dt}\left<p\right> = \left(-\frac{\hbar^2}{2m}\right)\int\left[\frac{\partial^2\psi^*}{\partial x^2}\frac{\partial \psi}{\partial x} - \psi^*\frac{\partial}{\partial x}\left(\frac{\partial^2\psi}{\partial x^2}\right)\right] + \left<-\frac{\partial V}{\partial x}\right>.\]
+Let us analyze the second term of the integral. Via integration by parts, we find that 
+\begin{align*}
+    \psi^*\frac{\partial}{\partial x}\left(\frac{\partial^2\psi}{\partial x^2}\right) &= \psi^*\int\frac{\partial}{\partial x}\left(\frac{\partial^2\psi}{\partial x^2}\right)dx - \int\left[\frac{\partial \psi^*}{\partial x}\int \frac{\partial}{\cancel{\partial x}}\left(\frac{\partial^2\psi}{\partial x^2}\cancel{dx}\right)\right]dx\\
+    &= \psi^*\left.\frac{\partial^2\psi}{\partial x^2}\right|_{-\infty}^{+\infty} - \int \frac{\partial \psi^*}{\partial x}\frac{\partial^2\psi}{\partial x^2}dx
+\end{align*}
+The limit of the wavefunction tells us that when $x\to\pm\infty$, then $\psi\to 0$. This means that we are only left with 
+\[\psi^*\frac{\partial}{\partial x}\left(\frac{\partial^2\psi}{\partial x^2}\right) = - \int \frac{\partial \psi^*}{\partial x}\frac{\partial^2\psi}{\partial x^2}dx.\]
+Substituting this into our expression for $d\left<p\right>/dt$ gives us a spectacular result. 
+\begin{align*}
+    \frac{d}{dt}\left<p\right> &= \left(-\frac{\hbar^2}{2m}\right)\int\left[\frac{\partial^2\psi^*}{\partial x^2}\frac{\partial \psi}{\partial x} - \frac{\partial \psi^*}{\partial x}\frac{\partial^2\psi}{\partial x^2}\right] + \left<-\frac{\partial V}{\partial x}\right>\\
+    &= \left(-\frac{\hbar^2}{2m}\right)\int \frac{\partial}{\cancel{\partial x}}\left(\frac{\partial \psi^*}{\partial x}\frac{\partial \psi}{\partial x}\right)\cancel{dx} + \left<-\frac{\partial V}{\partial x}\right>
+\end{align*}
+Integrating this expression gives us 
+\[\frac{d}{dt}\left<p\right> = \left(-\frac{\hbar^2}{2m}\right) \cdot \left.\frac{\partial \psi^*}{\partial x}\frac{\partial \psi}{\partial x}\right|_{-\infty}^{+\infty} + \left<-\frac{\partial V}{\partial x}\right>\]
+Once again, noting that the limit of the wavefunction tells us that when $x\to\pm\infty$, then $\psi\to 0$, we are left with 
+\[\boxed{\frac{d}{dt}\left<p\right> = \left<-\frac{\partial V}{\partial x}\right>}\]
+\end{proof}
+\end{enumerate}
+\end{sol}

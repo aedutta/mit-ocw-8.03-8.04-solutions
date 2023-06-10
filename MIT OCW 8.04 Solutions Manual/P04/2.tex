@@ -1,0 +1,57 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item The probability current is defined as (in one-dimension):
+\begin{align*}
+    J &= \frac{\hbar}{m} \Im\left(\Psi^*\frac{\partial}{\partial x}\Psi\right) \\
+    &= \frac{\hbar}{m} \Im\left(e^{-ikz}(ike^{ikz})\right) \\
+    &= \frac{\hbar}{m}\Im(ik) \\
+    &= \frac{\hbar k}{m}
+\end{align*}
+The flux through any closed surface will be zero as the probability current is constant.
+\item In spherical coordinates, the probability current is:
+$$J = \frac{\hbar}{m}\Im\left(\Psi^*\nabla \Psi\right)$$
+but since we are only concerned about the radial component, we have:
+\begin{align*}
+    J &= \frac{\hbar}{m}\Im\left(\frac{f^*(\theta)f(\theta)}{r}e^{-ikr}\frac{\partial}{\partial r}\left(\frac{e^{ikr}}{r}\right)\right) \\
+      &= \frac{\hbar}{m}\Im\left(\frac{f^*(\theta)f(\theta)}{r}e^{-ikr}\left(-\frac{e^{ikr}}{r^2}+\frac{ike^{ikr}}{r}\right)\right) \\
+      &= \frac{\hbar}{m}\Im\left(\frac{f^*(\theta)f(\theta)ik}{r^2}-\frac{f^*(\theta)f(\theta)}{r}\right)
+\end{align*}
+The complex number is in the form of $bi+a$ so the imaginary part is just $b$ or:
+$$J = \frac{\hbar k}{m} \frac{f^*(\theta)f(\theta)}{r^2}$$
+\item Our wavefunction is now
+$$\Psi = e^{ikz}+\frac{f(\theta)}{r}e^{ikr}$$
+so the probability current is:
+\begin{align*}
+    J &= \frac{\hbar}{m}\Im
+    \left(
+        \left(
+            e^{-ikz} + \frac{f^*(\theta)}{r}e^{-ikr}
+        \right)
+        \frac{\partial}{\partial r}
+        \left(
+        e^{ikz} + \frac{f(\theta)}{r}e^{ikr}
+        \right)
+    \right) \\
+    &= \frac{\hbar}{m}\Im
+    \left(
+        \left(
+            e^{-ikz} + \frac{f^*(\theta)}{r}e^{-ikr}
+        \right)
+        \left(
+        ik\cos\theta e^{ikz} + \frac{f(\theta)}{r}ike^{ikr}
+        \right)
+    \right) \\
+        &= \frac{\hbar}{m}\Im
+    \left(
+        \left(e^{-ikz}\right)\left(ik\cos\theta e^{ikz}\right) + \left(e^{-ikz}\right)\left(\frac{f(\theta)}{r}ike^{ikr}\right)+\left(\frac{f^*(\theta)}{r}e^{-ikr}\right)\left(ik\cos\theta e^{ikz}\right)
+    \right) \\
+    &= \frac{\hbar}{m} \Im
+    \left(
+    ik\cos\theta+\frac{f(\theta)}{r}ike^{ikr(1-\cos\theta)}+\frac{f^*(\theta)}{r}ik\cos\theta e^{ikr(\cos\theta-1)}
+    \right) \\
+    &= \frac{\hbar k}{mr} \Im \left(i\left(
+    r\cos\theta + f(\theta)e^{ikr(1-\cos\theta)}+f^*(\theta)e^{ikr(\cos\theta-1)}
+    \right)\right)
+\end{align*}
+\end{enumerate}
+\end{sol}

@@ -1,0 +1,72 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item 
+Adding a phase shift to the bottom leg is equivalent to effectively multiplying the state by the matrix:
+$$\text{PS} = \begin{pmatrix}
+1 & 0 \\
+0 & e^{i\delta}
+\end{pmatrix}$$
+The output is represented by:
+\begin{align*}
+\text{output} &=\text{(BS2)(PS)(BS1)}\binom{\alpha}{\beta} \\
+&=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 & 1 \\
+1 & -1
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 \\
+0 & e^{i\delta}
+\end{pmatrix}
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+-1 & 1 \\
+1 & 1
+\end{pmatrix}
+\binom{\alpha}{\beta} \\
+&= \frac{1}{2}
+\begin{pmatrix}
+1 & e^{i\delta} \\
+1 & -e^{i \delta}
+\end{pmatrix}
+\begin{pmatrix}
+-1 & 1 \\
+1 & 1
+\end{pmatrix}
+\binom{\alpha}{\beta} \\
+&= \frac{1}{2}
+\begin{pmatrix}
+-1+e^{i\delta} & 1+e^{i\delta}\\
+-1-e^{i\delta} & 1-e^{i\delta}
+\end{pmatrix}
+\binom{\alpha}{\beta} \\
+&= \frac{1}{2}
+\binom{(-1+e^{i\delta})\alpha+(1+e^{i\delta})\beta}{-(1+e^{i\delta})\alpha+(1-e^{i\delta})\beta}
+\end{align*}
+The squares of the norms give the respective probabilities:
+\begin{align*}
+    P_0 &= \frac{1+(2\beta^2-1)\cos\delta}{2} \\
+    P_1 &= \frac{1-(2\beta^2-1)\cos\delta}{2} \\
+\end{align*}
+\item Due to symmetry, this is equivalent to simply switching $\beta$ and $\alpha$, or effectively flipping the setup so that $P_0$ and $P_1$ swap and $\beta$ and $\alpha$ swap. Therefore, the new probabilities are:
+\begin{align*}
+    P_0 &= \frac{1-(1-2\beta^2)\cos\delta}{2} \\
+    P_1 &= \frac{1+(1-2\beta^2)\cos\delta}{2} \\
+\end{align*}
+\item By placing a phase shift at the top and bottom, it is equivalent to multiplying by
+$$\text{PS} = \begin{pmatrix}
+e^{i\delta} & 0 \\
+0 & e^{i\delta}
+\end{pmatrix} = e^{i\delta} \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}
+$$
+Therefore, all this does is shift the final phase of both by rotating the state by an angle $\delta$, which will not change the overall probability. This will lead to the result derived in the lecture:
+\begin{align*}
+    P_0 &= \beta^2 \\
+    P_1 &= \alpha^2 \\
+\end{align*}
+\end{enumerate}
+\end{sol}

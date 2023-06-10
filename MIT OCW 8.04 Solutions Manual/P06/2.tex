@@ -1,0 +1,16 @@
+\begin{sol}
+Following the hint, the solution is fairly straightforward. Assume that $\Psi_1$ and $\Psi_2$ have the same energy, then:
+\begin{align*}
+    \Psi_2\hat{H}\Psi_1 &= \Psi_2 E \Psi_1\\
+    \Psi_1\hat{H}\Psi_2 &= \Psi_1 E \Psi_2
+\end{align*}
+Subtracting the two:
+$$\Psi_2 \frac{\partial^2\Psi_1}{\partial x^2}-\Psi_1 \frac{\partial^2\Psi_2}{\partial x^2}=0$$
+This looks like the result of a product rule, so we can rewrite it as:
+$$\frac{\partial}{\partial x}\left(\Psi_2 \frac{\partial \Psi_1}{\partial x}-\Psi_1 \frac{\partial \Psi_2}{\partial x}\right)=0 \implies \Psi_2 \frac{\partial \Psi_1}{\partial x}-\Psi_1 \frac{\partial \Psi_2}{\partial x} = C$$
+We know that both $\Psi_1$ and $\Psi_2$ vanish at infinity, so we must have $C=0$. We then get:
+$$\Psi_2 d\Psi_1 = \Psi_1 d\Psi_2$$
+and solving this differential equation, we get:
+$$\Psi_2 = c\Psi_1$$
+Since $\Psi_2$ is a multiple of $\Psi_1$, the two solutions are not distinct.
+\end{sol}

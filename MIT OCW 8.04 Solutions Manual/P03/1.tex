@@ -1,0 +1,64 @@
+\begin{sol}
+For all of these parts, we can assume the operators to act on some arbitrary function $\phi(x)$
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item
+\begin{align*}
+[A, BC] &=  [A, B]C + B[A, C] \\
+[A, BC]\phi(x) &= [A, B]C\phi(x) + B[A, C]\phi(x) \\
+ABC\phi(x) - BCA\phi(x) &= ABC\phi(x) - BAC\phi(x) + BAC\phi(x) - BCA\phi(x)
+\end{align*}
+After simplifying, it is clear that both sides of this identity are the same, and that it is in fact true.
+\item
+\begin{align*}
+	[AB, C] &= A[B, C] + [A, C]B \\
+    [AB, C]\phi(x) &= A[B, C]\phi(x) + [A, C]B\phi(x) \\
+    ABC\phi(x) - CAB\phi(x) &= ABC\phi(x) - ACB\phi(x) + ACB\phi(x) - CAB\phi(x)
+\end{align*}
+After simplifying, it is clear that both sides of this identity are the same, and that it is in fact true.
+\item Expanding $[A, [B, C]] + [B, [C, A]] + [C, [A, B]]$, we get:
+\begin{align*}
+  A(BC - CB) - (BC - CB)A + B(CA - AC) - (CA - AC)B + C(AB - BA) - (AB - BA)C \\
+   = ABC - ACB - BCA + CBA + BCA - BAC - CAB + ACB + CAB - CBA - ABC + BAC
+\end{align*}
+All the terms cancel out and the final result for the expression is zero.
+\item First, note that:
+$$\hat{x}^n\phi(x) = x^n\phi(x), \hat{p}^n\phi(x) = (-i\hbar)^n\frac{\partial^n\phi(x)}{\partial x^n}$$
+
+Thus, 
+\begin{align*}
+[\hat{x}^n, \hat{p}]\phi(x) &= -x^ni\hbar\frac{\partial\phi(x)}{\partial x} + i\hbar\frac{\partial}{\partial x}(x^n\phi(x)) \\ &= -x^ni\hbar\frac{\partial\phi(x)}{\partial x} + i\hbar (nx^{n-1}\phi(x) + x^n\frac{\partial\phi(x)}{\partial x}) \\ &= i\hbar nx^{n-1}\phi(x) \\
+&\implies [\hat{x}^n, \hat{p}] = i\hbar nx^{n-1}
+\end{align*}
+% For the next consideration, we can use the identity from part b) as well as proof by induction:
+% \begin{align*}
+% [\hat{x}, \hat{p}^n]\phi(x) &= \hat{p}[\hat{p}^{n-1}, x] + [\hat{p}, x]
+% \end{align*}
+For the next consideration:
+\begin{align*}
+    [\hat{x},\hat{p}^n]\phi(x) &= x(-h\bar)^n\frac{\partial^n \phi}{\partial x^n}-(i\hbar)^n\frac{\partial^n}{\partial x^n}(x\phi) \\
+    &= (-i\hbar)^n\left[x\frac{\partial^n\phi}{\partial x^n}-\frac{\partial^n}{\partial x^n}(x\phi)\right]
+\end{align*}
+We need to evaluate: $\displaystyle \frac{\partial^n}{\partial x^n}{(x\phi)}$. This is easiest seen by starting with $n=1$, giving:
+$$\frac{\partial}{\partial x}{(x\phi)}=\phi + x\frac{\partial \phi}{\partial x}$$
+Letting $n=2$, we get:
+$$\frac{\partial^2}{\partial x^2}{(x\phi)}=2\frac{\partial \phi}{\partial x} + x\frac{\partial^2 \phi}{\partial x^2}$$
+This suggests the pattern:
+$$\frac{\partial^n}{\partial x^n}{(x\phi)}=n\frac{\partial^{n-1}\phi}{\partial x^{n-1}}+x\frac{\partial^n \phi}{\partial x^n}$$
+We can prove this via induction. Suppose this is true for $n=n$. Then for $n=n+1$:
+\begin{align*}
+    \frac{\partial^{n+1}}{\partial x^{n+1}}{(x\phi)}&=\frac{\partial}{\partial x}\left[n\frac{\partial^{n-1}\phi}{\partial x^{n-1}}+x\frac{\partial^n \phi}{\partial x^n}\right] \\
+    &= n \frac{\partial^n \phi}{\partial x^n} + \frac{\partial^n \phi}{\partial x^n} + x\frac{\partial^{n+1}\phi}{\partial x^{n+1}} \\
+    &= (n+1)\frac{\partial^n \phi}{\partial x^n} + x\frac{\partial^{n+1}\phi}{\partial x^{n+1}}
+\end{align*}
+proving our statement. Plugging this expression into our general equation allows us to simplify it to:
+$$[\hat{x},\hat{p}^n]=-n(-i\hbar)^n\frac{\partial^{n-1}}{\partial x^{n-1}} = i\hbar n\hat{p}^{n-1}$$
+\item
+\begin{align*}
+    [\hat{x}\hat{p}, \hat{x}^2]\phi(x) &= \hat{x}\hat{p}\hat{x}^2\phi(x) - \hat{x}^2\hat{x}\hat{p}\phi(x) \\ &= x\left(-i\hbar \frac{\partial}{\partial x}\left(x^2\phi(x)\right)\right) - x^3\left(-i\hbar\frac{\partial \phi(x)}{\partial x}\right) \\ &= -2i\hbar x^3\phi(x) -i\hbar x^3 \frac{\partial \phi(x)}{\partial x} + i\hbar x^3 \frac{\partial \phi(x)}{\partial x} \\ &= -2i\hbar x^3\phi(x) \\ &\implies  [\hat{x}\hat{p}, \hat{x}^2] = -2i\hbar x^3
+\end{align*}
+\begin{align*}
+[\hat{x}\hat{p}, \hat{p}^2]\phi(x) &= \hat{x}\hat{p}\hat{p}^2\phi(x) - \hat{p}^2\hat{x}\hat{p}\phi(x) \\ &= x(-i\hbar)^3\frac{\partial^3 \phi(x)}{\partial x^3} - (-i\hbar)^3\frac{\partial^2}{\partial x^2}\left(x\frac{\partial \phi(x)}{\partial x}\right) \\ &= -i\hbar^3x \frac{\partial^3 \phi(x)}{\partial x^3} +  i\hbar^3x \frac{\partial^3 \phi(x)}{\partial x^3} + 2i\hbar^3\frac{\partial^2 \phi(x)}{\partial x^2} \\ &= 2i\hbar^3\frac{\partial^2 \phi(x)}{\partial x^2}
+\end{align*}
+Noting the definition of the momentum operator, we can conclude: $$[\hat{x}\hat{p}, \hat{p}^2] = -2i\hbar\hat{p}^2$$
+\end{enumerate}
+\end{sol}

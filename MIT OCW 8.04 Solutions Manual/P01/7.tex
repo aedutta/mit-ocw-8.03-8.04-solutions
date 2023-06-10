@@ -1,0 +1,16 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Consider several rounds of testing. Suppose we start off with $N$ working bombs to test. After the first round, there will be $N/2$ explosions, $N/4$ verified bombs, and $N/4$ bombs that still need to be verified. Recursively, we can represent the number of bombs that get certified each round as:
+$$f_{N+1} = \frac{1}{4}f_N$$
+The total sum of certified bombs would be:
+$$\frac{N}{4}\frac{1}{1-\frac{1}{4}} = \frac{N}{3}$$
+So the total fraction of bombs that get certified is:
+$$\frac{1}{3}$$
+\item The Bayesian formula tells us the probability of it being defective is:
+\begin{align*}
+P(\text{defective} | D_0) &= \frac{P(D_0 | \text{defective}) P(\text{defective}) }{P(D_0)} \\
+&= \frac{(1)(0.8)}{(0.8)(1)+(0.2)(0.25)} \\
+&= 94.1\%
+\end{align*}
+\end{enumerate}
+\end{sol}

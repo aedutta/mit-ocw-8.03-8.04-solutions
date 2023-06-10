@@ -1,0 +1,7 @@
+\begin{sol}
+Starting off with definition of the probability density function and differentiating it (and using the SE later):
+\begin{align*}
+	\frac{\partial \rho}{\partial x} &= \int_{-\infty}^{\infty}(\frac{\partial \Psi^*}{\partial x}\Psi + \Psi^*\frac{\partial \Psi}{\partial x})\;\mathrm{d}x \\ &= \frac{i}{\hbar}((\hat{H}\Psi)^*\Psi - \Psi^*(\hat{H}\Psi)) \\ &= \frac{\hbar}{2im}(\Psi\nabla^2\Psi^* - \Psi^*\nabla^2\Psi) \\ &= -\nabla \cdot (\frac{\hbar}{2im}(\Psi^*\nabla\Psi - \Psi\nabla\Psi^*)) \\ &= -\nabla \cdot (\frac{\hbar}{m}\operatorname{Im}(\Psi^*\nabla\Psi))
+\end{align*}
+Noting the charge conservation equation, it can be concluded that: $$J(x, t) = \frac{\hbar}{m}\operatorname{Im}(\Psi^*(x, t)\nabla\Psi(x, t))$$
+\end{sol}

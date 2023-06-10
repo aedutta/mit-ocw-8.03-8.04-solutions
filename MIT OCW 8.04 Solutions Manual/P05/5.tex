@@ -1,0 +1,11 @@
+\begin{sol}
+Remember that $E \geq 0$ because $V(x)$ has a minimum value of zero. With that said, for $x\leq0$, $V(x) = 0$, so: $$\frac{\partial^2\psi(x)}{\partial x^2} = -\frac{2mE}{\hbar^2}\psi(x)\implies \psi(x) = A\cos{kx} + B\sin{kx},\;k^2 = \frac{2mE}{\hbar^2}$$Note that the complex exponential can also be represented as a sum of sines and cosines. We will come back to this later when considering boundary conditions \newline For $x \geq 0$, $V(x) = V_0$, so: $$\frac{\partial^2\psi(x)}{\partial x^2} = -\frac{2m}{\hbar^2}\left(E - V_0\right)\psi(x)$$
+Since $E - V_0 < 0$, it is clear that $$\psi(x) = Ce^{-\kappa x},\;\kappa^2 = -\frac{2m}{\hbar^2}\left(E_0 - V\right)$$
+Notice for the second case, we only care about the negative exponential term, since it must decay as $x$ approaches $\infty$.
+Equating boundary conditions gives $A = C$. We also need to ensure that the derivative of the wavefunction is zero, which implies that $Bk = -C\kappa$, implying that $B = -C\frac{\kappa}{k} = -A\frac{\kappa}{k}$. Making these substitutions,
+\[\psi(x) = \begin{cases} 
+      A\cos{kx} - A\frac{\kappa}{k}\sin{kx}, & \mathrm{for}\;x\leq 0 \\
+      Ae^{-\kappa x}, & \mathrm{for}\;x> 0
+   \end{cases}
+  \]where $k^2 = \frac{2mE}{\hbar^2}$ and $\kappa^2 = \frac{2m}{\hbar^2}\left(E_0 - V\right)$.
+\end{sol}

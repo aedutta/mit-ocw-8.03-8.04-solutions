@@ -1,0 +1,67 @@
+\begin{sol}
+\begin{enumerate}[label=\textbf{(\alph*)}] 
+\item We use the Taylor expansion of $e^{i\theta}$.
+\begin{align*}
+    e^{i\theta} &= 1 + i\theta + \frac{1}{2!}(i\theta)^2 + \frac{1}{3!}(i\theta)^3 + \frac{1}{4!}(i\theta)^4 + \frac{1}{5!}(i\theta)^5 + \dots\\
+    &= 1 + i\theta - \frac{1}{2!}\theta^2 - \frac{1}{3!}i\theta^3 + \frac{1}{4!}\theta^4 + \frac{1}{5!}i\theta^5 + \dots
+\end{align*}
+Separating these functions into even and odd powers gives us 
+\begin{align*}
+    e^{i\theta} &= \left(1 - \frac{1}{2!}\theta^2 + \frac{1}{4!}\theta^4 + \dots\right) + i\left(\theta -\frac{1}{3!}\theta^3 + \frac{1}{5!}\theta^5 + \dots\right)\\
+    e^{i\theta} &= \cos\theta + i\sin\theta.
+\end{align*}
+\item $a$ is the real part of the complex exponential, while $b$ is the imaginary part. Using Euler's formula: 
+\begin{align*}
+    a = r\cos\theta \\
+    b = r\sin\theta
+\end{align*}
+Then, note that the magnitude of the complex exponential is just the value of $r$. Additionally, the angle $\theta$ can be considered using the ratio of imaginary to real components of the complex exponential.
+\begin{align*}
+r = \sqrt{a^2 + b^2} \\
+\theta = \arctan{\frac{b}{a}}
+\end{align*}
+\item
+\begin{enumerate}[label=\textbf{(\roman*)}]
+    \item Note that $i = e^{\frac{i\pi}{2}}$, since $\sin{\frac{\pi}{2}} = 1$ and $\cos{\frac{\pi}{2}} = 0$. Thus, using the properties of exponents:
+\begin{align*}
+    re^{i\theta} \cdot i &= e^{i\theta} \cdot e^{\frac{i\pi}{2}} \\
+    &= re^{i(\theta + \frac{\pi}{2})}
+\end{align*}
+    \item $iz = i(a + ib) = ia - b$. Thus, the real part of $iz$ is $-b$.
+\end{enumerate}
+\item
+\begin{enumerate}[label=\textbf{(\roman*)}]
+\item 0, since its complex conjugate and the negative of its complex conjugate are both equal to itself, 0.
+    \item The complex conjugate flips the sign of the imaginary term, so taking the complex conjugate twice leaves us with $(z^*)^* = z$. For the second part of the question, note that $re^{-i\theta} = r\cos{-\theta} + i\sin{-\theta}$. Since cosine is an odd function and sine is an odd function, $re^{-i\theta} = r\cos\theta - i\sin\theta = a -bi$, which is the conjugate of the original complex number.
+    \item The real part is the same and the imaginary part becomes negative, by the definition of the complex conjugate.
+    \item $zz^* = (a + bi)(a - bi) = a^2 + b^2$. Using complex exponentials, $zz^* = re^{i\theta} * re^{-i\theta} = r^2$. Since $r = |z|$, $zz^* = |z|^2$.
+\end{enumerate}
+\item First, consider the double angle identities. We can represent $\cos{2\theta}$ and $\sin{2\theta}$ by the real and imaginary parts of $e^{2i\theta} = e^{i\theta} * e^{i\theta}$. Expanding:
+\begin{align*}
+    e^{2i\theta} &= e^{i\theta} \cdot e^{i\theta} \\ &= (\cos\theta + i\sin\theta)(\cos\theta + i\sin\theta) \\ &= \cos^2\theta + 2i\sin\theta\cos\theta - \sin^2\theta \\ &= (\cos^2\theta - \sin^2\theta) + i(2\sin\theta\cos\theta).
+\end{align*}
+Taking the real and imaginary parts of this expression, we obtain the double angle identities:
+\begin{align*}
+    \cos{2\theta} = \cos^2\theta - \sin^2\theta \\
+    \sin{2\theta} = 2\sin\theta\cos\theta
+\end{align*}
+The same thing can be done to solve for the triple angle identities, by finding the real and imaginary components of $e^{3i\theta} = e^{i\theta} * e^{i\theta} * e^{i\theta}$
+\begin{align*}
+    e^{3i\theta} &= e^{i\theta} \cdot e^{i\theta} \cdot e^{i\theta} \\ &= (\cos\theta + i\sin\theta)(\cos\theta + i\sin\theta)(\cos\theta + i\sin\theta) \\ &= \cos^3\theta + 3i\cos^2\theta\sin\theta - 3\cos\theta\sin^2\theta - i\sin^3\theta \\ &= (4\cos^3\theta - 3\cos\theta) + i(3\sin\theta - 4\sin^3\theta)
+\end{align*}
+Taking the real and imaginary components, we obtain the triple angle identities:
+\begin{align*}
+    \cos{3\theta} = 4\cos^3\theta - 3\cos\theta \\
+    \sin{3\theta} = 3\sin\theta - 4\sin^3\theta
+\end{align*}
+Now, the more general case of such identities can be found, with two arbitrary angles $A$ and $B$ added with each other in a similar fashion.
+\begin{align*}
+    e^{i(A + B)} &= e^{iA} \cdot e^{iB} \\ &= (\cos{A} + i\sin{A})(\cos{B} + i\sin{B}) \\ &= \cos{A}\cos{B} + i\sin{A}\cos{B} + i\sin{B}\cos{A} - \sin{A}\sin{B} \\ &= (\cos{A}\cos{B} - \sin{A}\sin{B}) + i(\sin{A}\cos{B} + \sin{B}\cos{A})
+\end{align*}
+Taking the real and imaginary components again, we obtain the sum and difference identities:
+\begin{align*}
+    \cos{(A + B)} = \cos{A}\cos{B} - \sin{A}\sin{B} \\
+    \sin{(A + B)} = \sin{A}\cos{B} + \sin{B}\cos{A}
+\end{align*}
+\end{enumerate}
+\end{sol}
