@@ -5,7 +5,7 @@ Work in progress. These are solutions to MIT's 8.03 (Vibrations & Waves) and 8.0
 8.03 Course Website: https://ocw.mit.edu/courses/8-03sc-physics-iii-vibrations-and-waves-fall-2016/
 8.04 Course Website: https://ocw.mit.edu/courses/8-04-quantum-physics-i-spring-2016/
 
-Thanks to Rakshit (8.03), Qilin Xue (8.04), and Aarush Gupta (8.04) who also helped create the solutions. Solutions are yet to bee checked and any corrections will be appreciated.
+Thanks to Rakshit (8.03), Qilin Xue (8.04), and Aarush Gupta (8.04) who also helped create the solutions. Solutions are yet to be checked and any corrections will be appreciated.
 
 8.03:
 Problem Sets: 70% completion (estimating)
